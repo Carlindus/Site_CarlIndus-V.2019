@@ -47,9 +47,11 @@ class Desktop{
 
 		foreach ($desktopIconLocation as $key => $value) {
 			$desktopIconContainers .=
-			'<div class="desktopContainer '.$key.'">'
-			  .$value.
-			'</div>';
+			'<div class="desktopContainer '.$key.'">
+				<div class="iconsContainer">'
+			  		.$value.
+				'</div>;
+			</div>';
 		  }
 		  $desktop = $desktopIconContainers.$desktopWindows;
 		

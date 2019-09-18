@@ -1,458 +1,115 @@
 @font-face {
-
   font-family: "Windows";
-
-  src: url("../font/Windows-Command-Prompt.woff2") format("woff2"),
-
-    url("../font/Windows-Command-Prompt.woff") format("woff"),
-
-    url("../font/Windows-Command-Prompt.ttf") format("truetype");
-
+  src: url("../font/Windows-Command-Prompt.woff2") format("woff2"), url("../font/Windows-Command-Prompt.woff") format("woff"), url("../font/Windows-Command-Prompt.ttf") format("truetype");
   font-weight: normal;
-
   font-style: normal;
-
 }
-
-
 
 @font-face {
-
   font-family: 'MicrosoftSansSerif';
-
-  src: url('../font/MicrosoftSansSerif.woff2') format('woff2'),
-
-    url('../font/MicrosoftSansSerif.woff') format('woff'),
-
-    url('../font/MicrosoftSansSerif.ttf') format('truetype');
-
+  src: url('../font/MicrosoftSansSerif.woff2') format('woff2'), url('../font/MicrosoftSansSerif.woff') format('woff'), url('../font/MicrosoftSansSerif.ttf') format('truetype');
   font-weight: normal;
-
   font-style: normal;
-
 }
-
-
 
 :root {
-
   --main-bg-color: #008080;
-
 }
-
-
-
-* {
-
-  margin: 0;
-
-  padding: 0;
-
-  box-sizing: border-box;
-
-}
-
-
-
-body {
-
-  font-family: "MicrosoftSansSerif", Helvetica, sans-serif !important;
-
-  font-size: 0.8rem;
-
-  color: black;
-
-}
-
-
-
-a {
-
-  text-decoration: none;
-
-  color: inherit;
-
-}
-
-
-
-section#win311 {
-
-  position: relative;
-
-  width: 100vw;
-
-  height: 100vh;
-
-  background-color: var(--main-bg-color);
-
-  padding: 3vmin;
-
-}
-
-
 
 /****************
 
+*   GENERAL   *
 
+****************/
 
-*   Animation   *
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "MicrosoftSansSerif", Helvetica, sans-serif !important;
+  font-size: 0.8rem;
+  color: black;
+}
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/****************
+
+*   ANIMATIONS   *
 
 ****************/
 
 .logowin311 {
-
   z-index: 1;
-
   position: absolute;
-
   top: 50%;
-
   left: 50%;
-
   transform: translate(-50%, -50%);
-
   /* opacity: 0.8; */
-
 }
-
-
 
 .logowin311 img {
-
   z-index: 1;
-
-  width: 100%;
-
+  width: 150%;
   height: auto;
-
   transform-origin: center center;
-
   animation: logoWin 3s linear forwards;
-
 }
-
-
 
 @keyframes logoWin {
-
   0% {
-
     opacity: 0.2;
-
     transform: scale(0.2);
-
   }
-
-
-
   80% {
-
     opacity: 1;
-
     transform: scale(1);
-
   }
-
-
-
   100% {
-
     opacity: 0.2;
-
     transform: scale(1);
-
   }
-
 }
-
-
 
 @keyframes iconsAppeared {
-
   0% {
-
-    
     opacity: 0;
-
   }
-
-
-
   100% {
-
     opacity: 1;
-
   }
-
 }
-
-
 
 /*******************
 
-*   config Style Win3.1   *
+*   STYLE Win3.1   *
 
 *******************/
 
-/* Configuration des boutons */
+/* DESKTOP CONFIG */
 
-.btnWin31 {
-
-  display: block;
-
-  font-family: "MicrosoftSansSerif", Helvetica, sans-serif !important;
-
-  font-size: 1rem;
-
-  border-top: 2px solid lightgrey;
-
-  border-left: 2px solid lightgrey;
-
-  border-right: 2px solid darkgrey;
-
-  border-bottom: 2px solid darkgrey;
-
-  padding: 5px 40px;
-
-  margin: 20px auto;
-
-}
-
-
-
-.btnWin31:hover {
-
-  font-weight: bold;
-
-  border: 2px solid #111;
-
-}
-
-
-
-/* configuration de l'icone */
-
-.ico {
-
-  background: #f0e646;
-
-  width: 50px;
-
-  height: 35px;
-
-  border-radius: 5px;
-
-  border-top: 1px solid grey;
-
-  border-right: 2px solid #333;
-
-  border-bottom: 2px solid #333;
-
-  border-left: 1px solid grey;
-
-  margin-bottom: 2vmin;
-  margin-top: 10px;
-
-}
-
-
-
-.ico-onglet {
-
-  background: #f0e646;
-
-  width: 50%;
-
-  height: 7px;
-
-  margin-top: -8px;
-
-  margin-left: 6px;
-
-  border-radius: 5px 5px 0 0;
-
-  border: 1px solid grey;
-
-  border-bottom: none;
-
-}
-
- 
-/* configuration des icones */
-
-.icons h2, .top-bar p {
-
-  font-family: "Windows", Helvetica, sans-serif !important;
-
-  font-size: 1rem;
-
-  text-align: center;
-
-  font-weight: normal;
-
-  padding: 5px;
-
-}
-
-
-/* TODO : uncommented the block */
-
-/* #win311>.icons {
-
-  opacity: 0;
-
-  animation: iconsAppeared 0.1s linear 3.5s forwards;
-
-} */
-
-#win311>.icons {
-
-  opacity: 1;
-
-  
-
-}
-
-
-
-.iconsContainer {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  flex-wrap: wrap;
-
-}
-
-
-
-.icons {
-
-  width: 100px;
-
-  height: auto;
-
-  margin: 1vmin;
-
-}
-
-
-
-.icons img {
-
-  width: 50%;
-
-  height: auto;
-
-  margin-bottom: 0.5vmin;
-
-}
-
-
-
-.ico-txt {
-
-  display: flex;
-
-}
-
-
-
-.ico-txt img {
-
-  margin: 0 auto;
-
-}
-
-
-
-.icons a {
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  transition: all 0.3s;
-
-}
-
-
-
-.icons a:hover {
-
-  cursor: pointer;
-
-}
-
-
-
-.icons a:hover h2 {
-
-  background: #000080;
-
-  color: #f5f5f5;
-
-}
-
-
-
-/*   Config directory  */
-
-.directory {
-  z-index: 10;
-  background-color: #f5f5f5;
-
-  position: absolute;
-
-  max-width: 50vw;
-
-  top: 50%;
-
-  left: 50%;
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  align-items: flex-end;
-
-  border: 2px solid grey;
-
-  margin: 10px;
-
-  outline: 5px solid lightGrey;
-
-}
-
-.window-closed {
-  display: none;
-  z-index: 1;
-
-}
-
-.window-opened {
-  display: block;
-  z-index: 10;
-
-}
+section#win311 {}
 
 #win311 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 5px;
-  padding: 10px;
+  background-color: var(--main-bg-color);
+  padding: 3vmin;
 }
 
 .desktopContainer {
   display: flex;
-  align-items: baseline;
 }
 
 .top_left {
@@ -469,17 +126,20 @@ section#win311 {
   grid-column: 3;
   grid-row: 1;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .center_left {
   grid-column: 1;
   grid-row: 2;
+  align-items: center;
 }
 
 .center {
   grid-column: 2;
   grid-row: 2;
   justify-content: center;
+  align-items: center;
 }
 
 .center_right {
@@ -491,366 +151,290 @@ section#win311 {
 .bottom_left {
   grid-column: 1;
   grid-row: 3;
-
+  align-items: flex-end;
 }
 
 .bottom_center {
   grid-column: 2;
   grid-row: 3;
-
+  align-items: flex-end;
 }
 
 .bottom_right {
   grid-column: 3;
   grid-row: 3;
   justify-content: flex-end;
+  align-items: flex-end;
 }
 
-/*
-#contactCID.directory {
+/*  ICONS CONFIG  */
 
-  top: 20%;
-
-  left: 20%;
-
+.icons h2, .top-bar p {
+  font-family: "Windows", Helvetica, sans-serif !important;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: normal;
+  padding: 5px;
 }
 
-
-
-#contactForm {
-
-  max-width: 350px;
-
-  transform: translate(-50%, -50%);
-
+#win311>.icons {
+  opacity: 0;
+  animation: iconsAppeared 0.1s linear 3.5s forwards;
 }
 
-
-
-#recycle-bin.directory {
-
-  top: 70%;
-
-  left: 70%;
-
+#win311>.icons {
+  opacity: 1;
 }
 
-
-
-#myDocuments.directory {
-
-  top: 60%;
-
-  left: 30%;
-
+.iconsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
+.icons {
+  width: 100px;
+  height: auto;
+  margin: 1vmin;
+}
 
+.icons img {
+  width: 50%;
+  height: auto;
+  margin-bottom: 0.5vmin;
+}
 
+.ico-txt {
+  display: flex;
+}
 
-#website-manager.directory {
-  
+.ico-txt img {
+  margin: 0 auto;
+}
+
+.icons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.icons a:hover {
+  cursor: pointer;
+}
+
+.icons a:hover h2 {
+  background: #000080;
+  color: #f5f5f5;
+}
+
+/*  WINDOWS DIRECTORY CONFIG  */
+
+.directory {
+  z-index: 10;
+  background-color: #f5f5f5;
+  position: absolute;
+  max-width: 50vw;
   top: 50%;
-  
-  left: 20%;
-  
+  left: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  border: 2px solid grey;
+  margin: 10px;
+  outline: 5px solid lightGrey;
 }
-*/
-
-#website-manager .iconsContainer,
-
-#myDocuments .iconsContainer {
-
-  justify-content: flex-start;
-
-}
-
 
 .directory:hover {
   z-index: 1000000 !important;
-
 }
 
-/* #contactCID:hover,
-
-#website-manager:hover,
-
-#myDocuments:hover,
-
-#recycle-bin:hover,
-
-#contactForm:hover {
-
-  z-index: 1000;
-
-} */
-
-
-
-article:hover .top-bar {
-
-  background: #000080;
-
+.window-closed {
+  display: none;
 }
 
-
+.window-opened {
+  display: block;
+}
 
 .top-bar {
-
   background: grey;
-
   width: 100%;
-
   height: 20px;
-
   align-self: flex-start;
-
   display: flex;
-
   align-items: center;
-
-  margin-bottom: 2vmin;
-
+  margin-bottom: 10px;
   border-bottom: 2px solid grey;
-
 }
-
-
 
 .top-bar:hover {
-
   cursor: move;
-
 }
 
-
+article:hover .top-bar {
+  background: #000080;
+}
 
 .cross {
-
   position: relative;
-
   width: 20px;
-
   height: 100%;
-
   background-color: lightGrey;
-
   border-right: 1px solid grey;
-
 }
-
-
 
 .cross:hover {
-
   cursor: default;
-
 }
 
-
-
-.cross-1,
-
-.cross-2 {
-
+.cross-1, .cross-2 {
   position: absolute;
-
   width: 80%;
-
   height: 2px;
-
   top: 50%;
-
   left: 10%;
-
   background-color: grey;
-
 }
-
-
 
 .cross-1 {
-
   transform: rotate(45deg);
-
 }
-
-
 
 .cross-2 {
-
   transform: rotate(-45deg);
-
 }
 
-
-
-.cross:hover .cross-1,
-
-.cross:hover .cross-2 {
-
+.cross:hover .cross-1, .cross:hover .cross-2 {
   background-color: #333;
-
 }
-
-
 
 .top-bar>p {
-
   color: #f5f5f5;
-
   padding: 0 15px;
-
   margin: 0 auto;
-
 }
-
-
 
 .repertory {
-
   display: flex;
-
   flex-wrap: wrap;
-
   align-items: flex-start;
-
 }
 
+/* Icon directory */
 
+.ico {
+  background: #f0e646;
+  width: 50px;
+  height: 35px;
+  border-radius: 5px;
+  border-top: 1px solid grey;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  border-left: 1px solid grey;
+  margin-bottom: 2vmin;
+  margin-top: 10px;
+}
 
-/* Form settings */
+.ico-onglet {
+  background: #f0e646;
+  width: 50%;
+  height: 7px;
+  margin-top: -8px;
+  margin-left: 6px;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid grey;
+  border-bottom: none;
+}
+
+/*  BUTTONS CONFIG  */
+
+.btnWin31 {
+  display: block;
+  font-family: "MicrosoftSansSerif", Helvetica, sans-serif !important;
+  font-size: 1rem;
+  border-top: 2px solid lightgrey;
+  border-left: 2px solid lightgrey;
+  border-right: 2px solid darkgrey;
+  border-bottom: 2px solid darkgrey;
+  padding: 5px 40px;
+  margin: 20px auto;
+}
+
+.btnWin31:hover {
+  font-weight: bold;
+  border: 2px solid #111;
+}
+
+/*******************
+
+*    FORM CONFIG   *
+
+*******************/
 
 form {
-
   display: flex;
-
   flex-direction: column;
-
   width: 90%;
-
   margin: 0 auto;
-
 }
-
-
 
 form label {
-
   padding: 2px 5px;
-
   margin-bottom: 5px;
-
 }
 
-
-
-form input,
-form textarea {
-
+form input, form textarea {
   width: 100%;
-
   background: inherit;
-
   border: none;
-
   margin-top: 3px;
-
 }
-
-
 
 button[name="send-form"] {
-
   min-width: 150px;
-
   background: grey;
-
   padding: 10px 0;
-
   margin: 5px auto;
-
 }
 
-
-
-button[name="send-form"]:hover,
-
-button[name="send-form"]:active {
-
+button[name="send-form"]:hover, button[name="send-form"]:active {
   background: #000080;
-
   color: #f5f5f5;
-
 }
-
-
 
 button[name="reset"] {
-
   font-size: 0.7rem;
-
   border: none;
-
   background: inherit;
-
   margin: 10px;
-
 }
-
-
 
 button[name="reset"]:hover {
-
   text-decoration: underline;
-
 }
-
-
 
 .invalidField {
-
   color: red;
-
 }
-
-
 
 /* Thanks message when form send */
 
-
-
 #confirmSendForm {
-
   display: none;
-
   left: 50%;
-
   top: 30%;
-
   transform: translateX(-50%);
-
   text-align: center;
-
   z-index: 1000;
-
 }
-
-
 
 .thanks * {
-
   margin: 10px auto;
-
   padding: 2px 15px;
-
 }
 
-
-
 /* Page 404 settings */
-
-
 
 /* page 404 without spaceInvaders
 
@@ -875,9 +459,6 @@ button[name="reset"]:hover {
 /* page404 with spaceInvaders*/
 
 .no-space-invaders {
-
   width: 100%;
-
   display: none;
-
 }
