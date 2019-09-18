@@ -3,6 +3,7 @@
 
 class WindowDirectory {
 
+    
     private $isDirectory;
     private $id;
     private $name;
@@ -18,26 +19,16 @@ class WindowDirectory {
     function createWindowDirectory(){
         global $RELATIVE_PATH;
 
-        $windowContainer = (!$this->isDirectory) ?
-        '' :
-        '<article id="'.$this->getId().'"
-        class="directory window-closed"
-        data-is-still-open="false">
-        <div class="top-bar">
-                <div class="cross">
-                    <span class="cross-1"></span>
-                    <span class="cross-2"></span>
-                </div>
-                <p> '.$this->getName().' </p>
-                </div>
-                <div class="iconsContainer">
-                '.$this->addIconsInWindow($this->content).'
-                 </div>
-        </article>';
-
+        $windowDir = "";
+        if ($this->isDirectory){
+            $windowContent = $this->addIconsInWindow($this->content);
+            $w = new Window($this->id, $this->name, $windowContent);
+            $windowDir = $w->createWindow();
+        }
+        
         // Check and create the directories into the content
-        $windowContainer .= $this->iterateInWindowContent($this->content);
-        return $windowContainer;
+        $windowDir .= $this->iterateInWindowContent($this->content);
+        return $windowDir;
     } 
     
     private function addIconsInWindow($content){
@@ -61,44 +52,37 @@ class WindowDirectory {
     }
 
 
+
 	/**
-	 * Get the value of name
-	 *
+	 * Get the value of isDirectory
 	 * @return  mixed
 	 */
-	public function getName()
-	{
+	public function getIsDirectory(){
+		return $this->isDirectory;
+	}
+
+	/**
+	 * Get the value of id
+	 * @return  mixed
+	 */
+	public function getId(){
+		return $this->id;
+	}
+
+	/**
+	 * Get the value of name
+	 * @return  mixed
+	 */
+	public function getName(){
 		return $this->name;
 	}
 
 	/**
 	 * Get the value of content
-	 *
 	 * @return  mixed
 	 */
-	public function getContent()
-	{
+	public function getContent(){
 		return $this->content;
-	}
-
-	/**
-	 * Get the value of id
-	 *
-	 * @return  mixed
-	 */
-	public function getId()
-	{
-		return $this->id;
-	}
-
-	/**
-	 * Get the value of isDirectory
-	 *
-	 * @return  mixed
-	 */
-	public function getIsDirectory()
-	{
-		return $this->isDirectory;
 	}
 }
 ?>
