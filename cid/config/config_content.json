@@ -1,0 +1,206 @@
+{
+  "website-manager": {
+    "isDirectory": true,
+    "isOnDesktop": true,
+    "location": "bottom_left",
+    "id": "website-manager",
+    "name": "Websites Manager",
+    "url": "#website-manager",
+    "img": "icon_file manager.svg",
+    "alt": "Icone Site manager",
+    "title": "Ouvrir la gestion des sites internet",
+    "content": {
+      "website-laj": {
+        "isDirectory": true,
+        "id": "website-laj",
+        "name": "Lille Aux Jeux",
+        "url": "#website-laj",
+        "img": "",
+        "alt": "",
+        "title": "",
+        "content": {
+          "site-laj": {
+            "isDirectory": false,
+            "id": "site-laj",
+            "name": "Site internet",
+            "url": "https://www.carlindusdesign.fr/LAJ",
+            "img": "favicon-LAJ.png",
+            "alt": "",
+            "title": "",
+            "content": {}
+          },
+          "conception-laj": {
+            "isDirectory": false,
+            "id": "conception-laj",
+            "name": "Dossier de conception",
+            "url": "downloads/CID_LAJ_ConstructionDeSite.pdf",
+            "img": "document.png",
+            "alt": "Dossier site Lille Aux Jeux",
+            "title": "Afficher le dossier de construction de site de Lille Aux Jeux",
+            "content": {}
+          }
+        }
+      },
+      "website-ed": {
+        "isDirectory": true,
+        "id": "website-ed",
+        "name": "ED - Photographe",
+        "url": "#website-ed",
+        "img": "",
+        "alt": "",
+        "title": "",
+        "content": {
+          "site-ed": {
+            "isDirectory": false,
+            "id": "site-ed",
+            "name": "Site internet",
+            "url": "https://www.carlindusdesign.fr/ED",
+            "img": "favicon-ED.png",
+            "alt": "",
+            "title": "",
+            "content": {}
+          },
+          "conception-ed": {
+            "isDirectory": false,
+            "id": "conception-ed",
+            "name": "Dossier de conception",
+            "url": "downloads/CID_ED_ConstructionDeSite.pdf",
+            "img": "document.png",
+            "alt": "Dossier Site Etienne Deleplanque",
+            "title": "Afficher le dossier de construction de site d'Etienne Deleplanque",
+            "content": {}
+          },
+          "visualIdentity-ed": {
+            "isDirectory": false,
+            "id": "conception-ed",
+            "name": "Charte graphique",
+            "url": "downloads/CID_ED_IdentiteVisuelle.pdf",
+            "img": "document.png",
+            "alt": "",
+            "title": "",
+            "content": {}
+          }
+        }
+      },
+      "website-addcom": {
+        "isDirectory": true,
+        "id": "website-addcom",
+        "name": "ADD-com",
+        "url": "#website-addcom",
+        "img": "",
+        "alt": "",
+        "title": "",
+        "content": {
+          "site-addcom": {
+            "isDirectory": false,
+            "id": "site-addcom",
+            "name": "Site internet",
+            "url": "https://www.carlindusdesign.fr/add-com",
+            "img": "favicon-add.png",
+            "alt": "",
+            "title": "",
+            "content": {}
+          },
+          "memoire-add": {
+            "isDirectory": false,
+            "id": "memoire-addcom",
+            "name": "Rapport de stage",
+            "url": "downloads/CID_ADD-pub_MemoireDeStage.pdf",
+            "img": "book.png",
+            "alt": "Memoire de stage",
+            "title": "Afficher le Mémoire de stage",
+            "content": {}
+          }
+        }
+      },
+      "barber-club": {
+        "isDirectory": false,
+        "id": "barber-club",
+        "name": "The barber Club",
+        "url": "https://www.carlindusdesign.fr/barber-club",
+        "img": "favicon-barberclub.png",
+        "alt": "",
+        "title": "",
+        "content": {}
+      },
+      "todo-list": {
+        "isDirectory": false,
+        "id": "todo-list",
+        "name": "Todo List",
+        "url": "https://www.carlindusdesign.fr/ToDoList",
+        "img": "favicon-todoList.png",
+        "alt": "",
+        "title": "",
+        "content": {}
+      }
+    }
+  },
+  "myDocuments": {
+    "isDirectory": true,
+    "isOnDesktop": true,
+    "location": "bottom_left",
+    "id": "myDocuments",
+    "name": "My Documents",
+    "url": "#myDocuments",
+    "img": "myDocuments.png",
+    "alt": "Icone mes documents",
+    "title": "Accéder à mes documents",
+    "content": {}
+  },
+  "apropos-cid": {
+    "isDirectory": true,
+    "isOnDesktop": true,
+    "location": "top_left",
+    "id": "apropos-cid",
+    "name": "CarlIndus Design",
+    "url": "#apropos-cid",
+    "img": "LogoCID_pix.svg",
+    "alt": "Logo Carlindus Design",
+    "title": "A propos de Carlindus Design",
+    "content": {
+      "contactForm-cid": {
+        "isDirectory": true,
+        "id": "contactForm-cid",
+        "name": "Contacter Carlindus Design",
+        "url": "#contactForm-cid",
+        "img": "favicon-formContact.png",
+        "alt": "Formulaire de contact Carlindus Design",
+        "title": "Envoyer un message à Carlindus Design",
+        "content": {}
+      },
+      "pressbook-cid": {
+        "isDirectory": false,
+        "id": "pressbook-cid",
+        "name": "Press-Book Carlindus Design",
+        "url": "/downloads/CID_PressBOOK.pdf",
+        "img": "book.png",
+        "alt": "Lien vers le Press-book de Carlindus Design",
+        "title": "Ouvrir le Press-book de Carlindus Design",
+        "content": {}
+      }
+    }
+  },
+  "recycle-bin": {
+    "isDirectory": true,
+    "isOnDesktop": true,
+    "location": "bottom_right",
+    "id": "recycle-bin",
+    "name": "Recycle Bin",
+    "url": "#recycle-bin",
+    "img": "recycle-bin.png",
+    "alt": "Icone de la corbeille",
+    "title": "Accéder au contenu de la corbeille",
+    "content": {
+      "animation-vaporeuses": {
+        "isDirectory": false,
+        "id": "animation-vaporeuses",
+        "name": "Animation pour le site \"Les Vaporeuses\"",
+        "url": "https://carlindusdesign.fr/anim/index.html",
+        "img": "defaultIcon.png",
+        "alt": "lien pour l'animation \"Les Vaporeuses\"",
+        "title": "Lancer l'animation pour le site \"Les Vaporeuses\"",
+        "content": {}
+      }
+    }
+  }
+}
