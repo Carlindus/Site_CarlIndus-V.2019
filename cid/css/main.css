@@ -94,8 +94,6 @@ a {
 
 /* DESKTOP CONFIG */
 
-section#win311 {}
-
 #win311 {
   position: relative;
   width: 100vw;
@@ -105,7 +103,8 @@ section#win311 {}
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 5px;
   background-color: var(--main-bg-color);
-  padding: 3vmin;
+  padding: 1em;
+  overflow: hidden;
 }
 
 .desktopContainer {
@@ -171,7 +170,7 @@ section#win311 {}
 
 .icons h2, .top-bar p {
   font-family: "Windows", Helvetica, sans-serif !important;
-  font-size: 1.5em;
+  font-size: 1.3em;
   text-align: center;
   font-weight: normal;
   padding: 5px;
@@ -188,7 +187,6 @@ section#win311 {}
 
 .iconsContainer {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -266,6 +264,8 @@ section#win311 {}
   align-items: center;
   margin-bottom: 10px;
   border-bottom: 2px solid grey;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .top-bar:hover {
@@ -363,7 +363,7 @@ article:hover .top-bar {
 
 .btnWin31:hover {
   font-weight: bold;
-  border: 2px solid #111;
+  border: 2px solid #333;
 }
 
 /*******************

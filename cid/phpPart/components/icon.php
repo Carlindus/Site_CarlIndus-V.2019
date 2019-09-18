@@ -4,6 +4,7 @@ class Icon {
 
     private $isDirectory;
     private $isOnDesktop;
+    private $isForm;
     private $location;
 
     private $id;
@@ -26,6 +27,9 @@ class Icon {
         $this->alt = $icon->alt;
         $this->title = $icon->title;
         $this->content = $icon->content;
+
+        // Form
+        if (property_exists($icon, 'isForm')) $this->isForm = true;
     }
  
     function createIcon(){
@@ -46,10 +50,10 @@ class Icon {
         global $RELATIVE_PATH;
         $iconLink; 
 
-        if ($this->isDirectory()){
+        if ($this->isDirectory() || $this->isForm() ){
             $iconLink = '<a id="'.$this->getId().'-ico" href="#" >';
         } else {
-            $iconLink = (isHttpUrl($this->getUrl())) ?
+            $iconLink = ( $this->isHttpUrl($this->getUrl()) || $this->isAnchorURL($this->getUrl()) ) ?
             '<a href="'.$this->getUrl().'">'
             :
             '<a href="'.$RELATIVE_PATH.'/'.$this->getUrl().'">';
@@ -81,7 +85,12 @@ class Icon {
     
     function isHttpUrl($urlToCheck){
         return (strtoupper(substr($urlToCheck, 0, 4)) === "HTTP") ? true : false;
-      }
+    }
+
+    function isAnchorURL($urlToCheck){
+        return (substr($urlToCheck, 0, 1) === "#") ? true : false;
+    }
+    
     /** GETTERS **/
     function isDirectory() {
         return $this->isDirectory;
@@ -89,6 +98,11 @@ class Icon {
     function isOnDesktop() {
         return $this->isOnDesktop;
     }
+
+    function isForm(){
+        return $this->isForm;
+    }
+
     function getLocation() {
         return $this->location;
     }
@@ -121,6 +135,7 @@ class Icon {
         return $this->content;
     }
     
+
 }
 
 

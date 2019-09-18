@@ -155,27 +155,28 @@
     "name": "CarlIndus Design",
     "url": "#apropos-cid",
     "img": "LogoCID_pix.svg",
-    "alt": "Logo Carlindus Design",
-    "title": "A propos de Carlindus Design",
+    "alt": "Logo CarlIndus Design",
+    "title": "A propos de CarlIndus Design",
     "content": {
-      "contactForm-cid": {
-        "isDirectory": true,
-        "id": "contactForm-cid",
-        "name": "Contacter Carlindus Design",
-        "url": "#contactForm-cid",
+      "contactForm": {
+        "isDirectory": false,
+        "isForm": true,
+        "id": "contactForm",
+        "name": "Contacter CarlIndus Design",
+        "url": "#contactForm",
         "img": "favicon-formContact.png",
-        "alt": "Formulaire de contact Carlindus Design",
-        "title": "Envoyer un message à Carlindus Design",
+        "alt": "Formulaire de contact CarlIndus Design",
+        "title": "Envoyer un message à CarlIndus Design",
         "content": {}
       },
       "pressbook-cid": {
         "isDirectory": false,
         "id": "pressbook-cid",
-        "name": "Press-Book Carlindus Design",
+        "name": "Press-Book CarlIndus Design",
         "url": "/downloads/CID_PressBOOK.pdf",
         "img": "book.png",
-        "alt": "Lien vers le Press-book de Carlindus Design",
-        "title": "Ouvrir le Press-book de Carlindus Design",
+        "alt": "Lien vers le Press-book de CarlIndus Design",
+        "title": "Ouvrir le Press-book de CarlIndus Design",
         "content": {}
       }
     }

@@ -13,8 +13,4 @@ $myDesktop = new Desktop($CONTENT);
 $DOM = $myDesktop->createDesktop();
 echo $DOM;
 
-  function isHttpUrl($urlToCheck){
-    return (strtoupper(substr($urlToCheck, 0, 4)) === "HTTP") ? true : false;
-  }
-
 ?>
