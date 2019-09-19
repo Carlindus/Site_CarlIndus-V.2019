@@ -20,7 +20,7 @@ $(document).ready(function () {
   // in percentage of the document size
   const LANDSCAPE_WINDOW = {
     "min": { "x": 0.25, "y": 0.25 },
-    "max": { "x": 0.6, "y": 0.60 }
+    "max": { "x": 0.5, "y": 0.5 }
   }
   const PORTRAIT_WINDOW = {
     "min": { "x": 0.25, "y": 0.25 },
@@ -100,29 +100,26 @@ $(document).ready(function () {
    * Add Listeners on click to the directory
    */
   function addEventListenerOnIcon(icon) {
-    isStillOpen = $('#' + icon.id).attr("data-is-still-open");
 
     // Add listener on the icon => open the directory
     $('#' + icon.id + '-ico').click(function () {
-      if (isWindowSizeChange(currentDocumentSize, getDocumentSize()) || !isStillOpen) {
-        console.log('clicked');
-        setWindowDirectoryPosition(icon);
-        currentDocumentSize = getDocumentSize();
-        $('#' + icon.id).attr("data-is-still-open", true);
+
+      var window = $('#' + icon.id);
+      if (!window.hasClass('window-opened')) {
+        if (isWindowSizeChange(currentDocumentSize, getDocumentSize()) || window.attr("data-position") == "unset") {
+          setWindowDirectoryPosition(icon);
+          currentDocumentSize = getDocumentSize();
+          window.attr("data-position", "set");
+        }
+        window.addClass('window-opened');
+        ++currentZIndex;
+        window.css({ "z-index": currentZIndex });
       }
-      $('#' + icon.id).removeClass('window-closed');
-      $('#' + icon.id).addClass('window-opened');
-      ++currentZIndex;
-      $('#' + icon.id).css({ "z-index": currentZIndex });
     });
 
     // Add listener on the cross of the directory => close the directory
     $('#' + icon.id + ' .cross').click(function () {
       $('#' + icon.id).removeClass('window-opened');
-      $('#' + icon.id).addClass('window-closed');
-      if (isWindowSizeChange(currentDocumentSize, getDocumentSize())) {
-        $('#' + icon.id).attr("data-is-still-open", false);
-      }
     });
   }
 
@@ -131,14 +128,17 @@ $(document).ready(function () {
    */
   function setWindowDirectoryPosition(icon) {
 
-
-
     const documentSize = getDocumentSize();
     const screenFormat = (documentSize.height * 1.2 > documentSize.width) ?
       PORTRAIT_WINDOW : LANDSCAPE_WINDOW; // constant define in the configuration on the top
 
     let topValue = "" + randomInterval(documentSize.height * screenFormat.min.y, documentSize.height * screenFormat.max.y) + "px";
     let leftValue = "" + randomInterval(documentSize.width * screenFormat.min.x, documentSize.width * screenFormat.max.x) + "px";
+
+    //DEBUG
+    console.log("screen : " + documentSize.height + "(" + documentSize.height * 0.25 + ", " + documentSize.height * 0.5 + ")" + " , " + documentSize.width + "(" + documentSize.width * 0.25 + ", " + documentSize.width * 0.5 + ")");
+    console.log("top : " + topValue + " ; Left : " + leftValue);
+
 
     // Set value to the Window directory
     $('#' + icon.id).css({
@@ -152,21 +152,22 @@ $(document).ready(function () {
    */
   function draggableWindows() {
 
-    $(".directory").draggable({
-
-      containment: "parent",
-      cursor: "move",
-      scroll: false,
-      addClasses: true,
-      start: function (e, ui) {
-        myStart = ui.position;
-      },
-      drag: function (e, ui) {
-        if (ui.position.right < myStart.right) {
-          return false;
+    $(".directory").draggable(
+      {
+        containment: "parent",
+        cursor: "move",
+        scroll: true,
+        addClasses: false,
+        start: function (e, ui) {
+          myStart = ui.position;
+        },
+        drag: function (e, ui) {
+          if (ui.position.right < myStart.right) {
+            return false;
+          }
         }
       }
-    });
+    );
   };
 
 

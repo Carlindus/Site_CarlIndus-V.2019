@@ -56,7 +56,7 @@ a {
 
 .logowin311 img {
   z-index: 1;
-  width: 150%;
+  width: 100%;
   height: auto;
   transform-origin: center center;
   animation: logoWin 3s linear forwards;
@@ -229,15 +229,10 @@ a {
 /*  WINDOWS DIRECTORY CONFIG  */
 
 .directory {
-  z-index: 10;
-  background-color: #f5f5f5;
+  display: none;
   position: absolute;
+  background-color: #f5f5f5;
   max-width: 50vw;
-  top: 50%;
-  left: 50%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
   border: 2px solid grey;
   margin: 10px;
   outline: 5px solid lightGrey;
@@ -245,10 +240,6 @@ a {
 
 .directory:hover {
   z-index: 1000000 !important;
-}
-
-.window-closed {
-  display: none;
 }
 
 .window-opened {

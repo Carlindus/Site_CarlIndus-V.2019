@@ -16,8 +16,8 @@ class Window {
     function createWindow(){
         return (
             '<article   id="'.$this->getId().'"
-                        class="directory window-closed"
-                        data-is-still-open="false">
+						class="directory"
+						data-position="unset">
                 <div class="top-bar">
                     <div class="cross">
                         <span class="cross-1"></span>

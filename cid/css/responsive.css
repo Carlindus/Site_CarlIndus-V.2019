@@ -1,42 +1,36 @@
-@media screen and (max-width: 1000px) {
-  .logowin311 {
-    top: 45%;
-    width: 55vw;
-  }
-
-  .directory {
-    max-width: 95vw;
-  }
-
-  #myDocuments.directory {
-    top: 35%;
-    left: 5%;
-  }
-
-  #website-manager.directory {
-    left: 5%;
-  }
-
-  #recycle-bin.directory {
-    left: 40%;
-  }
-
-  #contactCID.directory {
-    top: 10%
-  }
-
-  #confirmSendForm {
-    left: 0;
-    transform: translateX(0);
-  }
-
-/* page 404 with spaceInvader*/
-  .space-invaders {
-    display: none;
-  }
-
-  .no-space-invaders {
-    display: flex;
-    justify-content: center;
-  }
-}
+@media screen and (max-width: 1000px) {
+  .logowin311 {
+    top: 45%;
+    width: 55vw;
+  }
+  .directory {
+    max-width: 95vw;
+  }
+  /*
+  #myDocuments.directory {
+    top: 35%;
+    left: 5%;
+  }
+  #website-manager.directory {
+    left: 5%;
+  }
+  #recycle-bin.directory {
+    left: 40%;
+  }
+  #contactCID.directory {
+    top: 10%
+  }
+  */
+  #confirmSendForm {
+    left: 0;
+    transform: translateX(0);
+  }
+  /* page 404 with spaceInvader*/
+  .space-invaders {
+    display: none;
+  }
+  .no-space-invaders {
+    display: flex;
+    justify-content: center;
+  }
+}
