@@ -8,7 +8,9 @@ $(document).ready(function () {
     // Add Listener to icons & draggableAction to all windows
     var CONFIG_CONTENT_PATH = "cid/config/config_content.json";
     initAllIcons(CONFIG_CONTENT_PATH);
-    console.log('myScript is loaded');
+
+    // TODO Find a best way to addEventListener to the form icon
+    $("#contactForm-ico").click(addEventListenerOnIcon("contactForm"));
 
   });
 
@@ -88,7 +90,7 @@ $(document).ready(function () {
    */
   function initIcon(icon) {
     if (icon.isDirectory) {
-      addEventListenerOnIcon(icon);
+      addEventListenerOnIcon(icon.id);
       for (let elem in icon.content) {
         initIcon(icon.content[elem]);
       }
@@ -99,15 +101,15 @@ $(document).ready(function () {
   /*
    * Add Listeners on click to the directory
    */
-  function addEventListenerOnIcon(icon) {
+  function addEventListenerOnIcon(iconId) {
 
     // Add listener on the icon => open the directory
-    $('#' + icon.id + '-ico').click(function () {
-
-      var window = $('#' + icon.id);
+    $('#' + iconId + '-ico').click(function () {
+      console.log('is clicked');
+      var window = $('#' + iconId);
       if (!window.hasClass('window-opened')) {
         if (isWindowSizeChange(currentDocumentSize, getDocumentSize()) || window.attr("data-position") == "unset") {
-          setWindowDirectoryPosition(icon);
+          setWindowDirectoryPosition(iconId);
           currentDocumentSize = getDocumentSize();
           window.attr("data-position", "set");
         }
@@ -118,15 +120,16 @@ $(document).ready(function () {
     });
 
     // Add listener on the cross of the directory => close the directory
-    $('#' + icon.id + ' .cross').click(function () {
-      $('#' + icon.id).removeClass('window-opened');
+    $('#' + iconId + ' .cross').click(function () {
+      $('#' + iconId).removeClass('window-opened');
     });
   }
+
 
   /*
    * Define the position of the top left corner of the directory
    */
-  function setWindowDirectoryPosition(icon) {
+  function setWindowDirectoryPosition(iconId) {
 
     const documentSize = getDocumentSize();
     const screenFormat = (documentSize.height * 1.2 > documentSize.width) ?
@@ -141,7 +144,7 @@ $(document).ready(function () {
 
 
     // Set value to the Window directory
-    $('#' + icon.id).css({
+    $('#' + iconId).css({
       "top": topValue,
       "left": leftValue
     });

@@ -7,11 +7,13 @@ class WindowDirectory {
     private $isDirectory;
     private $id;
     private $name;
+    private $img;
     private $content;
 
     function __construct($iconParent){
         $this->id = $iconParent->id;
         $this->name = $iconParent->name;
+        $this->img = $iconParent->img;
         $this->content = $iconParent->content;
         $this->isDirectory = $iconParent->isDirectory;
     }
@@ -22,7 +24,7 @@ class WindowDirectory {
         $windowDir = "";
         if ($this->isDirectory){
             $windowContent = $this->addIconsInWindow($this->content);
-            $w = new Window($this->id, $this->name, $windowContent);
+            $w = new Window($this->id, $this->name, $this->img, $windowContent);
             $windowDir = $w->createWindow();
         }
         
@@ -83,6 +85,14 @@ class WindowDirectory {
 	 */
 	public function getContent(){
 		return $this->content;
+	}
+
+	/**
+	 * Get the value of img
+	 * @return  mixed
+	 */
+	public function getImg(){
+		return $this->img;
 	}
 }
 ?>

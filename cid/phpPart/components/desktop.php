@@ -50,7 +50,7 @@ class Desktop{
 			'<div class="desktopContainer '.$key.'">
 				<div class="iconsContainer">'
 			  		.$value.
-				'</div>;
+				'</div>
 			</div>';
 		  }
 		  $desktop = $desktopIconContainers.$desktopWindows;

@@ -15,7 +15,7 @@
         "id": "website-laj",
         "name": "Lille Aux Jeux",
         "url": "#website-laj",
-        "img": "",
+        "img": "favicon-LAJ.png",
         "alt": "",
         "title": "",
         "content": {
@@ -46,7 +46,7 @@
         "id": "website-ed",
         "name": "ED - Photographe",
         "url": "#website-ed",
-        "img": "",
+        "img": "favicon-ED.png",
         "alt": "",
         "title": "",
         "content": {
@@ -87,7 +87,7 @@
         "id": "website-addcom",
         "name": "ADD-com",
         "url": "#website-addcom",
-        "img": "",
+        "img": "favicon-add.png",
         "alt": "",
         "title": "",
         "content": {
@@ -164,7 +164,7 @@
         "id": "contactForm",
         "name": "Contacter CarlIndus Design",
         "url": "#contactForm",
-        "img": "favicon-formContact.png",
+        "img": "contact-cid.png",
         "alt": "Formulaire de contact CarlIndus Design",
         "title": "Envoyer un message à CarlIndus Design",
         "content": {}
