@@ -29,6 +29,10 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
   font-family: "Windows", Helvetica, sans-serif !important;
   font-size: 0.8rem;
   color: black;
@@ -68,10 +72,12 @@ a {
     opacity: 0.2;
     transform: scale(0.2);
   }
+
   80% {
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0.2;
     transform: scale(1);
@@ -82,10 +88,14 @@ a {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
+
+
 
 /*******************
 
@@ -97,14 +107,13 @@ a {
 
 #win311 {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 5px;
   background-color: var(--main-bg-color);
-  padding: 1em;
 }
 
 .desktopContainer {
@@ -166,8 +175,163 @@ a {
   align-items: flex-end;
 }
 
-/*  ICONS CONFIG  */
+/*******************
 
+*   GENERAL   *
+
+*******************/
+
+.window-opened {
+  display: block !important;
+}
+
+.inner-border {
+  padding: 0 5px;
+  height: 100%;
+}
+
+.window-is-maximized {
+  margin: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  max-width: 100% !important;
+  width: 100%;
+  height: 100%;
+}
+
+/*******************
+*  TASKBAR CONFIG  *
+*******************/
+#taskbar {
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  height: 2rem;
+  background: lightgray;
+  border-top: 3px solid #e6e6e6;
+  padding: 1px 2px;
+}
+
+#taskbar>div {
+  height: 100%;
+  text-align: center;
+}
+
+/* START MENU */
+
+#startmenu-btn {
+  flex: 0 1 auto;
+}
+
+#startmenu-btn div {
+  display: flex;
+  align-items: center;
+}
+
+#startmenu-btn div img {
+  padding: 0 5px;
+  height: 80%;
+}
+
+#startmenu-btn div span {
+  padding: 0 5px;
+  user-select: none;
+}
+
+#startmenu-btn .inner-border {
+  border-top: 3px solid #e6e6e6;
+  border-left: 3px solid #e6e6e6;
+  border-bottom: 3px solid #848484;
+  border-right: 3px solid #848484;
+}
+
+
+#notification-area .inner-border,
+#startmenu-btn:active .inner-border {
+  border-top: 2px solid #b9b9b9;
+  border-left: 2px solid #b9b9b9;
+  border-bottom: 2px solid #e6e6e6;
+  border-right: 2px solid #e6e6e6;
+}
+
+#startmenu-btn nav {
+  display: none;
+  position: absolute;
+  bottom: 2rem;
+  min-width: 100px;
+  min-height: 200px;
+  background: lightgray;
+}
+
+#startmenu-btn:hover nav {
+  display: block;
+}
+
+/* START MENU NAV */
+
+#taskbar nav ul li {
+  height: 25px;
+  width: auto;
+}
+
+#startmenu-btn:hover,
+.menuItem:hover {
+  background-color: #ededed;
+  cursor: pointer;
+}
+
+/* MINIMIZE WINDOW */
+
+#minimize-windows-area {
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0 3px;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: auto;
+  border-top: 2px solid #e6e6e6;
+  border-left: 2px solid #e6e6e6;
+  border-bottom: 2px solid #848484;
+  border-right: 2px solid #848484;
+  margin: 0 1px;
+  padding: 2px;
+  user-select: none;
+}
+
+.menuItem:hover {
+  cursor: pointer;
+}
+
+
+.menuItem img {
+  height: 60%;
+  margin-right: 5px;
+}
+
+/* NOTIFICATION AREA */
+
+#notification-area {
+  flex: 0 0 auto;
+}
+
+#notification-area div span {
+  display: block;
+}
+
+#notification-area div span:nth-child(2) {
+  margin-top: -4px;
+}
+
+/*******************
+*   ICONS CONFIG   *
+*******************/
 .icons h2 {
   font-family: "Windows", Helvetica, sans-serif !important;
   font-size: 1.3em;
@@ -242,19 +406,16 @@ a {
   z-index: 1000000 !important;
 }
 
-.window-opened {
-  display: block;
-}
-
 .top-bar {
-  background: grey;
-  width: 100%;
-  height: 20px;
-  align-self: flex-start;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  align-items: center;
+  width: 100%;
+  height: 22px;
+  background: grey;
   border-bottom: 2px solid grey;
+  margin-bottom: 10px;
+  padding: 0 1px;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -270,13 +431,13 @@ article:hover .top-bar {
 .top-bar-title {
   display: flex;
   height: 100%;
-  margin: 0 5px;
+  margin-right: 10px;
 }
 
 .top-bar-title img {
   height: 100%;
   width: 100%;
-  padding: 2px;
+  padding: 1px;
 }
 
 .top-bar-title p {
@@ -286,25 +447,42 @@ article:hover .top-bar {
   margin: 0;
 }
 
-.cross {
+.top-bar-buttons {
+  display: flex;
+  height: 90%;
+}
+
+.top-bar-buttons {
+  cursor: default !important;
+}
+
+.cross,
+.minimize-window,
+.maximize-window {
   position: relative;
   width: 20px;
   height: 100%;
   background-color: lightGrey;
-  border-right: 1px solid grey;
 }
 
-.cross:hover {
-  cursor: default;
+.cross {
+  margin-left: 3px;
 }
 
-.cross-1, .cross-2 {
+.cross-1,
+.cross-2,
+.min-bar,
+.maximize-window div {
   position: absolute;
   width: 80%;
-  height: 2px;
-  top: 50%;
   left: 10%;
   background-color: grey;
+}
+
+.cross-1,
+.cross-2 {
+  height: 2px;
+  top: 50%;
 }
 
 .cross-1 {
@@ -315,8 +493,42 @@ article:hover .top-bar {
   transform: rotate(-45deg);
 }
 
-.cross:hover .cross-1, .cross:hover .cross-2 {
+.cross:hover span,
+.cross:hover span,
+.minimize-window:hover span,
+.maximize-window:hover span:nth-child(1) {
   background-color: #333;
+}
+
+.maximize-window,
+.minimize-window {
+  margin-right: 3px;
+}
+
+.maximize-window div {
+  display: flex;
+  flex-direction: column;
+  top: 10%;
+  height: 80%;
+}
+
+.min-bar,
+.max-bar {
+  height: 3px;
+}
+
+.min-bar {
+  bottom: 10%;
+}
+
+.max-window {
+  border: 1px solid grey;
+  background-color: lightgrey;
+  height: 100%;
+}
+
+.maximize-window:hover span:nth-child(2) {
+  border: 1px solid #333;
 }
 
 .repertory {
@@ -394,7 +606,8 @@ form label {
   letter-spacing: 1px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   background: inherit;
   border: none;
@@ -412,7 +625,8 @@ button[name="send-form"] {
   margin: 5px auto;
 }
 
-button[name="send-form"]:hover, button[name="send-form"]:active {
+button[name="send-form"]:hover,
+button[name="send-form"]:active {
   background: #000080;
   color: #f5f5f5;
 }

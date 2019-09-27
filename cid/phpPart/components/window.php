@@ -24,13 +24,24 @@ class Window {
 						data-position="unset">
 				<div class="top-bar">
 					<div class="top-bar-title">
-					<img src="'.$ASSETS_PATH.'/img/siteIcons/'.$this->getImg().'" />
-					<p> '.$this->getTitle().' </p>
+						<img src="'.$ASSETS_PATH.'/img/siteIcons/'.$this->getImg().'" />
+						<p> '.$this->getTitle().' </p>
 					</div>
-                    <div class="cross">
-                        <span class="cross-1"></span>
-                        <span class="cross-2"></span>
-                    </div>
+					<div class="top-bar-buttons">
+						<div class="minimize-window">
+							<span class="min-bar"></span>
+						</div>
+						<div class="maximize-window">
+							<div>
+								<span class="max-bar"></span>
+								<span class="max-window"></span>
+							</div>
+						</div>
+						<div class="cross">
+							<span class="cross-1"></span>
+							<span class="cross-2"></span>
+						</div>
+					</div>
                 </div>
                 <div class="iconsContainer">
                 '.$this->getContent().'

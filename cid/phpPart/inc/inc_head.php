@@ -1,4 +1,4 @@
-<html lang="fr" dir="ltr">
+<html lang="<?php echo $lang ?>" dir="ltr">
 
 <head>
 

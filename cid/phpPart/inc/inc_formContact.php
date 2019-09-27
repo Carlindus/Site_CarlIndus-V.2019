@@ -71,7 +71,7 @@ $contactForm = ($response != null && $response->success) ?
       </label>
       
       <label>
-      <span>Les champs suivis d\'une étoile (*) sont obligatoires</span>
+        <span>Les champs suivis d\'une étoile (*) sont obligatoires</span>
       </label>
 
       <div  class="g-recaptcha" 

@@ -5,6 +5,8 @@ $(document).ready(function () {
   /************************************************/
 
   $(function onLoad() {
+    console.log('myscript loaded');
+
     // Add Listener to icons & draggableAction to all windows
     var CONFIG_CONTENT_PATH = "cid/config/config_content.json";
     initAllIcons(CONFIG_CONTENT_PATH);
@@ -97,35 +99,96 @@ $(document).ready(function () {
     }
   };
 
-
   /*
-   * Add Listeners on click to the directory
+   * Add Listeners on click to the icons of directory target
    */
   function addEventListenerOnIcon(iconId) {
+    addEventListenerOpenWindow(iconId);
+    addEventListenerCloseWindow(iconId);
+    addEventListenerMaximizeWindow(iconId);
+    addEventListenerMinimizeWindow(iconId);
+  }
 
-    // Add listener on the icon => open the directory
+  // Add listener on the icon => open the directory window
+  function addEventListenerOpenWindow(iconId) {
     $('#' + iconId + '-ico').click(function () {
-      console.log('is clicked');
-      var window = $('#' + iconId);
-      if (!window.hasClass('window-opened')) {
-        if (isWindowSizeChange(currentDocumentSize, getDocumentSize()) || window.attr("data-position") == "unset") {
-          setWindowDirectoryPosition(iconId);
-          currentDocumentSize = getDocumentSize();
-          window.attr("data-position", "set");
-        }
-        window.addClass('window-opened');
-        ++currentZIndex;
-        window.css({ "z-index": currentZIndex });
-      }
-    });
-
-    // Add listener on the cross of the directory => close the directory
-    $('#' + iconId + ' .cross').click(function () {
-      $('#' + iconId).removeClass('window-opened');
+      openWindow(iconId);
     });
   }
 
+  // Add listener on the cross of the directory => close the directory window
+  function addEventListenerCloseWindow(iconId) {
+    $('#' + iconId + ' .cross').click(function () {
+      closeWindow(iconId);
+    });
 
+  }
+
+  function addEventListenerMaximizeWindow(iconId) {
+    $('#' + iconId + ' .maximize-window').click((event) => {
+      $('#' + iconId).toggleClass("window-is-maximized");
+    });
+  }
+
+  function addEventListenerMinimizeWindow(iconId) {
+    $('#' + iconId + ' .minimize-window').click(() => {
+      closeWindow(iconId);
+      if (!$('#' + iconId + '-menu-item').length) {
+        $('#minimize-windows-area').append(createLink(iconId));
+      }
+      $('#' + iconId + '-menu-item').click(() => {
+        $('#' + iconId).toggleClass("window-opened");
+      });
+    });
+  }
+
+  function openWindow(id) {
+    var window = $('#' + id);
+    if (id == "lala") {
+      console.log("id = lala");
+    } else {
+      if (!window.hasClass("window-opened")) {
+        if (isWindowSizeChange(currentDocumentSize, getDocumentSize()) || window.attr("data-position") == "unset") {
+          setWindowDirectoryPosition(id);
+          currentDocumentSize = getDocumentSize();
+          window.attr("data-position", "set");
+        }
+        window.addClass("window-opened");
+        ++currentZIndex;
+        window.css({ "z-index": currentZIndex });
+      }
+    }
+  }
+
+  function closeWindow(id) {
+    $('#' + id).removeClass("window-opened");
+    // if shortcut exist on taskbar-> delete it
+    if ($('#' + id + '-menu-item').length) {
+      destroyLink(id);
+    }
+  }
+
+  function createLink(id) {
+    let link =
+      '<div id="' + id + '-menu-item" class="menuItem">' +
+      '<img src="' + getImgUrlFromDirectory(id) + '"/>' +
+      '<p>' + getNameFromDirectory(id) + '</p>' +
+      '</div>';
+    return link;
+  }
+
+  function destroyLink(id) {
+    console.log('destroy');
+    $('#' + id + '-menu-item').remove('div');
+  }
+
+  function getImgUrlFromDirectory(iconId) {
+    return $('#' + iconId + ' .top-bar-title img').attr('src');
+  }
+
+  function getNameFromDirectory(iconId) {
+    return $('#' + iconId + ' .top-bar-title p').text();
+  }
   /*
    * Define the position of the top left corner of the directory
    */
@@ -137,11 +200,6 @@ $(document).ready(function () {
 
     let topValue = "" + randomInterval(documentSize.height * screenFormat.min.y, documentSize.height * screenFormat.max.y) + "px";
     let leftValue = "" + randomInterval(documentSize.width * screenFormat.min.x, documentSize.width * screenFormat.max.x) + "px";
-
-    //DEBUG
-    console.log("screen : " + documentSize.height + "(" + documentSize.height * 0.25 + ", " + documentSize.height * 0.5 + ")" + " , " + documentSize.width + "(" + documentSize.width * 0.25 + ", " + documentSize.width * 0.5 + ")");
-    console.log("top : " + topValue + " ; Left : " + leftValue);
-
 
     // Set value to the Window directory
     $('#' + iconId).css({
@@ -172,8 +230,6 @@ $(document).ready(function () {
       }
     );
   };
-
-
 
 }); // end of $(document).ready({ ...
 

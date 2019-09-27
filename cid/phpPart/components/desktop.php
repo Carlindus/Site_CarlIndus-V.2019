@@ -5,23 +5,27 @@
  */
 class Desktop{
 	
-    private $content;
+	private $content;
+	private $taskbar;
 
     function __construct($desktopContent){
-        $this->content = $desktopContent;
+		$this->content = $desktopContent;
+		$this->taskbar = new Taskbar();
 	}
 	
 	function createDesktop(){
 		global $ASSETS_PATH;
 
-		return $desktopDOM = 
+		return $desktopDOM = (
 			'<section id="win311">
 				<div class="logowin311">
 					<img src="'. $ASSETS_PATH .'/img/winCidlogo.png"
 							alt="Parodie du logo windows 3.117" />
 				</div>'
 				. $this->createDesktopIconContainer() .
-			'</section>';
+			'</section>'
+			. $this->taskbar->createTaskBar()
+		);
 	}
 	
 	private function createDesktopIconContainer(){
@@ -67,6 +71,16 @@ class Desktop{
 	public function getContent()
 	{
 		return $this->content;
+	}
+
+	/**
+	 * Set the value of taskbar
+	 * @param   mixed  $taskbar  
+	 * @return  self
+	 */
+	public function setTaskbar($taskbar){
+		$this->taskbar = $taskbar;
+		return $this;
 	}
 }
 
