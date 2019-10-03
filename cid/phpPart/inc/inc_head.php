@@ -9,7 +9,7 @@
 
   <title><?php echo $site_title ?></title>
 
-  <link rel="icon" type="image/png" href="<?php echo $ASSETS_PATH ?>/img/siteIcons/favicon-CID.png" />
+  <link rel="icon" type="image/png" href="<?php echo $ASSETS_PATH ?>/img/siteIcons/icon_cid.png" />
   <link href="<?php echo $ASSETS_PATH ?>/css/main.css" rel="stylesheet">
   <link href="<?php echo $ASSETS_PATH ?>/css/responsive.css" rel="stylesheet">
 

@@ -6,7 +6,7 @@
     "id": "website-manager",
     "name": "Websites Manager",
     "url": "#website-manager",
-    "img": "icon_file manager.svg",
+    "img": "icon_fileManager.png",
     "alt": "Icone Site manager",
     "title": "Ouvrir la gestion des sites internet",
     "content": {
@@ -15,7 +15,7 @@
         "id": "website-laj",
         "name": "Lille Aux Jeux",
         "url": "#website-laj",
-        "img": "favicon-LAJ.png",
+        "img": "icon_laj.png",
         "alt": "",
         "title": "",
         "content": {
@@ -24,7 +24,7 @@
             "id": "site-laj",
             "name": "Site internet",
             "url": "https://www.carlindusdesign.fr/LAJ",
-            "img": "favicon-LAJ.png",
+            "img": "icon_laj.png",
             "alt": "",
             "title": "",
             "content": {}
@@ -34,7 +34,7 @@
             "id": "conception-laj",
             "name": "Dossier de conception",
             "url": "downloads/CID_LAJ_ConstructionDeSite.pdf",
-            "img": "document.png",
+            "img": "icon_document.png",
             "alt": "Dossier site Lille Aux Jeux",
             "title": "Afficher le dossier de construction de site de Lille Aux Jeux",
             "content": {}
@@ -46,7 +46,7 @@
         "id": "website-ed",
         "name": "ED - Photographe",
         "url": "#website-ed",
-        "img": "favicon-ED.png",
+        "img": "icon_ed.png",
         "alt": "",
         "title": "",
         "content": {
@@ -55,7 +55,7 @@
             "id": "site-ed",
             "name": "Site internet",
             "url": "https://www.carlindusdesign.fr/ED",
-            "img": "favicon-ED.png",
+            "img": "icon_ed.png",
             "alt": "",
             "title": "",
             "content": {}
@@ -65,7 +65,7 @@
             "id": "conception-ed",
             "name": "Dossier de conception",
             "url": "downloads/CID_ED_ConstructionDeSite.pdf",
-            "img": "document.png",
+            "img": "icon_document.png",
             "alt": "Dossier Site Etienne Deleplanque",
             "title": "Afficher le dossier de construction de site d'Etienne Deleplanque",
             "content": {}
@@ -75,7 +75,7 @@
             "id": "conception-ed",
             "name": "Charte graphique",
             "url": "downloads/CID_ED_IdentiteVisuelle.pdf",
-            "img": "document.png",
+            "img": "icon_document.png",
             "alt": "",
             "title": "",
             "content": {}
@@ -87,7 +87,7 @@
         "id": "website-addcom",
         "name": "ADD-com",
         "url": "#website-addcom",
-        "img": "favicon-add.png",
+        "img": "icon_add.png",
         "alt": "",
         "title": "",
         "content": {
@@ -96,7 +96,7 @@
             "id": "site-addcom",
             "name": "Site internet",
             "url": "https://www.carlindusdesign.fr/add-com",
-            "img": "favicon-add.png",
+            "img": "icon_add.png",
             "alt": "",
             "title": "",
             "content": {}
@@ -106,7 +106,7 @@
             "id": "memoire-addcom",
             "name": "Rapport de stage",
             "url": "downloads/CID_ADD-pub_MemoireDeStage.pdf",
-            "img": "book.png",
+            "img": "icon_book.png",
             "alt": "Memoire de stage",
             "title": "Afficher le Mémoire de stage",
             "content": {}
@@ -118,7 +118,7 @@
         "id": "barber-club",
         "name": "The barber Club",
         "url": "https://www.carlindusdesign.fr/barber-club",
-        "img": "favicon-barberclub.png",
+        "img": "icon_barberclub.png",
         "alt": "",
         "title": "",
         "content": {}
@@ -128,7 +128,7 @@
         "id": "todo-list",
         "name": "Todo List",
         "url": "https://www.carlindusdesign.fr/ToDoList",
-        "img": "favicon-todoList.png",
+        "img": "icon_todoList.png",
         "alt": "",
         "title": "",
         "content": {}
@@ -142,7 +142,7 @@
     "id": "myDocuments",
     "name": "My Documents",
     "url": "#myDocuments",
-    "img": "myDocuments.png",
+    "img": "icon_myDocuments.png",
     "alt": "Icone mes documents",
     "title": "Accéder à mes documents",
     "content": {}
@@ -154,7 +154,7 @@
     "id": "apropos-cid",
     "name": "CarlIndus Design",
     "url": "#apropos-cid",
-    "img": "LogoCID_pix.svg",
+    "img": "icon_cid.png",
     "alt": "Logo CarlIndus Design",
     "title": "A propos de CarlIndus Design",
     "content": {
@@ -164,7 +164,7 @@
         "id": "contactForm",
         "name": "Contacter CarlIndus Design",
         "url": "#contactForm",
-        "img": "contact-cid.png",
+        "img": "icon_contactCid.png",
         "alt": "Formulaire de contact CarlIndus Design",
         "title": "Envoyer un message à CarlIndus Design",
         "content": {}
@@ -174,7 +174,7 @@
         "id": "pressbook-cid",
         "name": "Press-Book CarlIndus Design",
         "url": "/downloads/CID_PressBOOK.pdf",
-        "img": "book.png",
+        "img": "icon_book.png",
         "alt": "Lien vers le Press-book de CarlIndus Design",
         "title": "Ouvrir le Press-book de CarlIndus Design",
         "content": {}
@@ -188,7 +188,7 @@
     "id": "recycle-bin",
     "name": "Recycle Bin",
     "url": "#recycle-bin",
-    "img": "recycle-bin.png",
+    "img": "icon_recycleBin.png",
     "alt": "Icone de la corbeille",
     "title": "Accéder au contenu de la corbeille",
     "content": {
@@ -197,7 +197,7 @@
         "id": "animation-vaporeuses",
         "name": "Animation pour le site \"Les Vaporeuses\"",
         "url": "https://carlindusdesign.fr/anim/index.html",
-        "img": "defaultIcon.png",
+        "img": "icon_defaultFile.png",
         "alt": "lien pour l'animation \"Les Vaporeuses\"",
         "title": "Lancer l'animation pour le site \"Les Vaporeuses\"",
         "content": {}
