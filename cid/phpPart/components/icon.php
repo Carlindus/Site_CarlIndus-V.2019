@@ -2,8 +2,7 @@
 
 class Icon {
 
-    private $isDirectory;
-    private $isOnDesktop;
+    private $type;
     private $isForm;
     private $location;
 
@@ -17,8 +16,7 @@ class Icon {
     private $content;
 
     function __construct( $icon ) {
-        $this->isDirectory = $icon->isDirectory;
-        $this->isOnDesktop = $icon->isOnDesktop;
+        $this->type = $icon->type;
         $this->location = $icon->location;
         $this->id = $icon->id;
         $this->name = $icon->name;
@@ -50,7 +48,7 @@ class Icon {
         global $RELATIVE_PATH;
         $iconLink; 
 
-        if ($this->isDirectory() || $this->isForm() ){
+        if ($this->type == "directory" || $this->isForm() ){
             $iconLink = '<a id="'.$this->getId().'-ico" href="#" >';
         } else {
             $iconLink = ( $this->isHttpUrl($this->getUrl()) || $this->isAnchorURL($this->getUrl()) ) ?
@@ -65,7 +63,7 @@ class Icon {
         global $ASSETS_PATH;
         $iconImg;
 
-        if ($this->isDirectory() && !$this->isOnDesktop()){
+        if ($this->type == "directory" && ($this->location == [])){
             $iconImg = 
             '<div class="ico">
                 <div    class="ico-onglet"
@@ -92,49 +90,45 @@ class Icon {
     }
     
     /** GETTERS **/
-    function isDirectory() {
-        return $this->isDirectory;
+    public function getType(){
+		return $this->type;
     }
-    function isOnDesktop() {
-        return $this->isOnDesktop;
-    }
-
-    function isForm(){
+    
+    public function isForm(){
         return $this->isForm;
     }
 
-    function getLocation() {
+    public function getLocation() {
         return $this->location;
     }
     
-    function getId() {
+    public function getId() {
         return $this->id;
     }
     
-    function getName() {
+    public function getName() {
         return $this->name;
     }
     
-    function getUrl() {
+    public function getUrl() {
         return $this->url;
     }
     
-    function getImg() {
+    public function getImg() {
         return $this->img;
     }
     
-    function getAlt() {
+    public function getAlt() {
         return $this->alt;
     }
     
-    function getTitle() {
+    public function getTitle() {
         return $this->title;
     }
     
-    function getContent() {
+    public function getContent() {
         return $this->content;
     }
-    
 
 }
 
