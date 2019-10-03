@@ -1,8 +1,12 @@
 {
   "website-manager": {
-    "isDirectory": true,
-    "isOnDesktop": true,
-    "location": "bottom_left",
+    "type": "directory",
+    "location": [
+      {
+        "component": "desktop",
+        "position": "bottom_left"
+      }
+    ],
     "id": "website-manager",
     "name": "Websites Manager",
     "url": "#website-manager",
@@ -11,7 +15,7 @@
     "title": "Ouvrir la gestion des sites internet",
     "content": {
       "website-laj": {
-        "isDirectory": true,
+        "type": "directory",
         "id": "website-laj",
         "name": "Lille Aux Jeux",
         "url": "#website-laj",
@@ -20,7 +24,7 @@
         "title": "",
         "content": {
           "site-laj": {
-            "isDirectory": false,
+            "type": "external-link",
             "id": "site-laj",
             "name": "Site internet",
             "url": "https://www.carlindusdesign.fr/LAJ",
@@ -30,7 +34,7 @@
             "content": {}
           },
           "conception-laj": {
-            "isDirectory": false,
+            "type": "document",
             "id": "conception-laj",
             "name": "Dossier de conception",
             "url": "downloads/CID_LAJ_ConstructionDeSite.pdf",
@@ -42,7 +46,7 @@
         }
       },
       "website-ed": {
-        "isDirectory": true,
+        "type": "directory",
         "id": "website-ed",
         "name": "ED - Photographe",
         "url": "#website-ed",
@@ -51,7 +55,7 @@
         "title": "",
         "content": {
           "site-ed": {
-            "isDirectory": false,
+            "type": "external-link",
             "id": "site-ed",
             "name": "Site internet",
             "url": "https://www.carlindusdesign.fr/ED",
@@ -61,7 +65,7 @@
             "content": {}
           },
           "conception-ed": {
-            "isDirectory": false,
+            "type": "document",
             "id": "conception-ed",
             "name": "Dossier de conception",
             "url": "downloads/CID_ED_ConstructionDeSite.pdf",
@@ -71,7 +75,7 @@
             "content": {}
           },
           "visualIdentity-ed": {
-            "isDirectory": false,
+            "type": "document",
             "id": "conception-ed",
             "name": "Charte graphique",
             "url": "downloads/CID_ED_IdentiteVisuelle.pdf",
@@ -83,7 +87,7 @@
         }
       },
       "website-addcom": {
-        "isDirectory": true,
+        "type": "directory",
         "id": "website-addcom",
         "name": "ADD-com",
         "url": "#website-addcom",
@@ -92,7 +96,7 @@
         "title": "",
         "content": {
           "site-addcom": {
-            "isDirectory": false,
+            "type": "external-link",
             "id": "site-addcom",
             "name": "Site internet",
             "url": "https://www.carlindusdesign.fr/add-com",
@@ -102,7 +106,7 @@
             "content": {}
           },
           "memoire-add": {
-            "isDirectory": false,
+            "type": "document",
             "id": "memoire-addcom",
             "name": "Rapport de stage",
             "url": "downloads/CID_ADD-pub_MemoireDeStage.pdf",
@@ -114,7 +118,7 @@
         }
       },
       "barber-club": {
-        "isDirectory": false,
+        "type": "external-link",
         "id": "barber-club",
         "name": "The barber Club",
         "url": "https://www.carlindusdesign.fr/barber-club",
@@ -124,7 +128,7 @@
         "content": {}
       },
       "todo-list": {
-        "isDirectory": false,
+        "type": "external-link",
         "id": "todo-list",
         "name": "Todo List",
         "url": "https://www.carlindusdesign.fr/ToDoList",
@@ -136,9 +140,13 @@
     }
   },
   "myDocuments": {
-    "isDirectory": true,
-    "isOnDesktop": true,
-    "location": "bottom_left",
+    "type": "directory",
+    "location": [
+      {
+        "component": "desktop",
+        "position": "bottom_left"
+      }
+    ],
     "id": "myDocuments",
     "name": "My Documents",
     "url": "#myDocuments",
@@ -148,9 +156,13 @@
     "content": {}
   },
   "apropos-cid": {
-    "isDirectory": true,
-    "isOnDesktop": true,
-    "location": "top_left",
+    "type": "directory",
+    "location": [
+      {
+        "component": "desktop",
+        "position": "top_left"
+      }
+    ],
     "id": "apropos-cid",
     "name": "CarlIndus Design",
     "url": "#apropos-cid",
@@ -159,7 +171,7 @@
     "title": "A propos de CarlIndus Design",
     "content": {
       "contactForm": {
-        "isDirectory": false,
+        "type": "link",
         "isForm": true,
         "id": "contactForm",
         "name": "Contacter CarlIndus Design",
@@ -170,7 +182,7 @@
         "content": {}
       },
       "pressbook-cid": {
-        "isDirectory": false,
+        "type": "document",
         "id": "pressbook-cid",
         "name": "Press-Book CarlIndus Design",
         "url": "/downloads/CID_PressBOOK.pdf",
@@ -182,9 +194,13 @@
     }
   },
   "recycle-bin": {
-    "isDirectory": true,
-    "isOnDesktop": true,
-    "location": "bottom_right",
+    "type": "directory",
+    "location": [
+      {
+        "component": "desktop",
+        "position": "bottom_right"
+      }
+    ],
     "id": "recycle-bin",
     "name": "Recycle Bin",
     "url": "#recycle-bin",
@@ -193,7 +209,7 @@
     "title": "Accéder au contenu de la corbeille",
     "content": {
       "animation-vaporeuses": {
-        "isDirectory": false,
+        "type": "external-link",
         "id": "animation-vaporeuses",
         "name": "Animation pour le site \"Les Vaporeuses\"",
         "url": "https://carlindusdesign.fr/anim/index.html",

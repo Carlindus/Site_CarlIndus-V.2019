@@ -36,12 +36,12 @@ class Desktop{
 
 		foreach ($this->content as $icon){
 
-			if (property_exists($icon, 'isOnDesktop')){
+			if (property_exists($icon, 'location') && $this->getDesktopPosition($icon) != null){
 				$desktopIcon = new Icon($icon);
-				$myLocation = $icon->location;
+				$myLocation = $this->getDesktopPosition($icon);
 				$desktopIconLocation->$myLocation .= $desktopIcon->createIcon();
 			  }
-			  if (property_exists($icon, 'isDirectory') && $icon->isDirectory){
+			  if ($icon->type == "directory"){
 				  $window = new WindowDirectory($icon);
 				  $desktopWindows .= $window->createWindowDirectory();
 				  /*
@@ -62,6 +62,15 @@ class Desktop{
 		  return $desktop;
 	}
 
+
+	public function getDesktopPosition($icon){
+		foreach ($icon->location as $element) {
+			if ($element->component == "desktop"){  
+				return $element->position;
+			}
+		}
+		return null;
+	}
 
 	/**
 	 * Get the value of content

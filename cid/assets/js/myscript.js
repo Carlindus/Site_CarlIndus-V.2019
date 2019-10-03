@@ -91,7 +91,7 @@ $(document).ready(function () {
    * Create icon only or with its directory and all icons that it contains
    */
   function initIcon(icon) {
-    if (icon.isDirectory) {
+    if (icon.type === "directory") {
       addEventListenersOnIcon(icon.id);
       for (let elem in icon.content) {
         initIcon(icon.content[elem]);
@@ -144,19 +144,16 @@ $(document).ready(function () {
 
   function openWindow(id) {
     var window = $('#' + id);
-    if (id == "lala") {
-      console.log("id = lala");
-    } else {
-      if (!window.hasClass("window-opened")) {
-        if (isWindowSizeChange(currentDocumentSize, getDocumentSize()) || window.attr("data-position") == "unset") {
-          setWindowDirectoryPosition(id);
-          currentDocumentSize = getDocumentSize();
-          window.attr("data-position", "set");
-        }
-        window.addClass("window-opened");
-        ++currentZIndex;
-        window.css({ "z-index": currentZIndex });
+    if (!window.hasClass("window-opened")) {
+      if (isWindowSizeChange(currentDocumentSize, getDocumentSize()) || window.attr("data-position") == "unset") {
+        setWindowDirectoryPosition(id);
+        currentDocumentSize = getDocumentSize();
+        window.attr("data-position", "set");
       }
+      window.addClass("window-opened");
+      ++currentZIndex;
+      window.css({ "z-index": currentZIndex });
+
     }
   }
 

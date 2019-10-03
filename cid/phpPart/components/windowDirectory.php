@@ -4,7 +4,7 @@
 class WindowDirectory {
 
     
-    private $isDirectory;
+    private $type;
     private $id;
     private $name;
     private $img;
@@ -15,14 +15,14 @@ class WindowDirectory {
         $this->name = $iconParent->name;
         $this->img = $iconParent->img;
         $this->content = $iconParent->content;
-        $this->isDirectory = $iconParent->isDirectory;
+        $this->type = $iconParent->type;
     }
     
     function createWindowDirectory(){
         global $RELATIVE_PATH;
 
         $windowDir = "";
-        if ($this->isDirectory){
+        if ($this->type == "directory"){
             $windowContent = $this->addIconsInWindow($this->content);
             $w = new Window($this->id, $this->name, $this->img, $windowContent);
             $windowDir = $w->createWindow();
@@ -45,7 +45,7 @@ class WindowDirectory {
     private function iterateInWindowContent($windowLinked){
         $windowContentLinked = '';
         foreach ($windowLinked as $key => $value){
-            if ($value->isDirectory){
+            if ($value->type == "directory"){
                 $newWindow = new WindowDirectory($value);
                 $windowContentLinked .= $newWindow->createWindowDirectory();
             }
@@ -54,14 +54,14 @@ class WindowDirectory {
     }
 
 
-
 	/**
-	 * Get the value of isDirectory
+	 * Get the value of type
 	 * @return  mixed
 	 */
-	public function getIsDirectory(){
-		return $this->isDirectory;
-	}
+	public function getType(){
+		return $this->type;
+    }
+    
 
 	/**
 	 * Get the value of id
@@ -94,5 +94,7 @@ class WindowDirectory {
 	public function getImg(){
 		return $this->img;
 	}
+
+
 }
 ?>
