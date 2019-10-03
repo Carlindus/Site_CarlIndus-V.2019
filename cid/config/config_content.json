@@ -9,7 +9,7 @@
     ],
     "id": "website-manager",
     "name": "Websites Manager",
-    "url": "#website-manager",
+    "url": "",
     "img": "icon_fileManager.png",
     "alt": "Icone Site manager",
     "title": "Ouvrir la gestion des sites internet",
@@ -18,7 +18,7 @@
         "type": "directory",
         "id": "website-laj",
         "name": "Lille Aux Jeux",
-        "url": "#website-laj",
+        "url": "",
         "img": "icon_laj.png",
         "alt": "",
         "title": "",
@@ -49,7 +49,7 @@
         "type": "directory",
         "id": "website-ed",
         "name": "ED - Photographe",
-        "url": "#website-ed",
+        "url": "",
         "img": "icon_ed.png",
         "alt": "",
         "title": "",
@@ -90,7 +90,7 @@
         "type": "directory",
         "id": "website-addcom",
         "name": "ADD-com",
-        "url": "#website-addcom",
+        "url": "",
         "img": "icon_add.png",
         "alt": "",
         "title": "",
@@ -149,7 +149,7 @@
     ],
     "id": "myDocuments",
     "name": "My Documents",
-    "url": "#myDocuments",
+    "url": "",
     "img": "icon_myDocuments.png",
     "alt": "Icone mes documents",
     "title": "Accéder à mes documents",
@@ -164,31 +164,63 @@
       }
     ],
     "id": "apropos-cid",
-    "name": "CarlIndus Design",
-    "url": "#apropos-cid",
+    "name": "Carlindus Design",
+    "url": "",
     "img": "icon_cid.png",
     "alt": "Logo CarlIndus Design",
     "title": "A propos de CarlIndus Design",
     "content": {
-      "contactForm": {
-        "type": "link",
-        "isForm": true,
-        "id": "contactForm",
-        "name": "Contacter CarlIndus Design",
-        "url": "#contactForm",
-        "img": "icon_contactCid.png",
-        "alt": "Formulaire de contact CarlIndus Design",
-        "title": "Envoyer un message à CarlIndus Design",
+      "linkedin-cid": {
+        "type": "external-link",
+        "location": [
+          {
+            "component": "taskbar",
+            "position": "startmenu"
+          }
+        ],
+        "id": "linkedin-cid",
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/carlierlaurent-dev/",
+        "img": "icon_linkedin.png",
+        "alt": "Lien vers le LinkedIn de CarlIndus Design",
+        "title": "Ouvrir le LinkedIn de CarlIndus Design",
+        "content": {}
+      },
+      "gitHub-cid": {
+        "type": "external-link",
+        "location": [
+          {
+            "component": "taskbar",
+            "position": "startmenu"
+          }
+        ],
+        "id": "gitHub-cid",
+        "name": "Github",
+        "url": "https://github.com/Carlindus",
+        "img": "icon_github.png",
+        "alt": "Lien vers le GitHub de CarlIndus Design",
+        "title": "Ouvrir le GitHub de CarlIndus Design",
         "content": {}
       },
       "pressbook-cid": {
         "type": "document",
         "id": "pressbook-cid",
-        "name": "Press-Book CarlIndus Design",
+        "name": "Press-Book",
         "url": "/downloads/CID_PressBOOK.pdf",
         "img": "icon_book.png",
         "alt": "Lien vers le Press-book de CarlIndus Design",
         "title": "Ouvrir le Press-book de CarlIndus Design",
+        "content": {}
+      },
+      "contactForm": {
+        "type": "link",
+        "isForm": true,
+        "id": "contactForm",
+        "name": "Me contacter",
+        "url": "",
+        "img": "icon_contactCid.png",
+        "alt": "Formulaire de contact CarlIndus Design",
+        "title": "Envoyer un message à CarlIndus Design",
         "content": {}
       }
     }
@@ -203,7 +235,7 @@
     ],
     "id": "recycle-bin",
     "name": "Recycle Bin",
-    "url": "#recycle-bin",
+    "url": "",
     "img": "icon_recycleBin.png",
     "alt": "Icone de la corbeille",
     "title": "Accéder au contenu de la corbeille",
