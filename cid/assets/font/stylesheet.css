@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Windows Command Prompt';
+    src: url('Windows-Command-Prompt.woff2') format('woff2'),
+        url('Windows-Command-Prompt.woff') format('woff'),
+        url('Windows-Command-Prompt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MicrosoftSansSerif';
+    src: url('MicrosoftSansSerif.woff2') format('woff2'),
+        url('MicrosoftSansSerif.woff') format('woff'),
+        url('MicrosoftSansSerif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
