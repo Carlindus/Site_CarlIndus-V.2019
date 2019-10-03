@@ -31,16 +31,14 @@ class Icon {
     }
  
     function createIcon(){
-        $iconLink = $this->getIconLink();
-        $iconImage = $this->getIconImage();
-        $iconDom = 
+        return (
             '<div class="icons">'
-                .$iconLink
-                .$iconImage
+                .$this->getIconLink()
+                .$this->getIconImage()
                 .'<h2>'.$this->getName().'</h2>
                 </a>
-            </div>';
-        return $iconDom;
+            </div>'
+        );
     }
     
 
