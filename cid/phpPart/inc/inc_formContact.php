@@ -4,7 +4,7 @@
 * @copyright Copyright (c) 2014, Google Inc.
 * @link      http://www.google.com/recaptcha
 */
-require_once "recaptchalib.php";
+require_once $PHP_PATH."/contact/recaptchalib.php";
 
 $reCaptcha = new ReCaptcha($RECAPTCHA_SECRET);
 // The response from reCAPTCHA
@@ -29,7 +29,7 @@ $contactForm = ($response != null && $response->success) ?
     :
   '<div class="repertory">
     <form  class=""
-           action="'.$RELATIVE_PATH.'/phpPart/traitement.php"
+           action="'.$PHP_PATH.'/contact/traitement.php"
            method="post"
            data-validForm="true" />
 
