@@ -5,6 +5,7 @@ $(document).ready(function () {
     /************************************************/
 
     $(function onLoad() {
+        console.log("taskbar.js loaded");
         setDate();
         setTime();
         setInterval(() => {

@@ -251,5 +251,21 @@
         "content": {}
       }
     }
+  },
+  "react-cid": {
+    "type": "external-link",
+    "location": [
+      {
+        "component": "taskbar",
+        "position": "startmenu"
+      }
+    ],
+    "id": "react-cid",
+    "name": "Back to ... 2019",
+    "url": "https://carlindusdesign.fr/cid-react/",
+    "img": "icon_react-cid.png",
+    "alt": "Logo react version CID",
+    "title": "Accéder à la version 2019 du site",
+    "content": {}
   }
 }
