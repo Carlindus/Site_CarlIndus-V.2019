@@ -6,6 +6,7 @@ $(document).ready(function () {
 
   $(function onLoad() {
 
+    console.log("myscript.js loaded");
     // Add Listener to icons & draggableAction to all windows
     // TODO load the path from config file
     var CONFIG_CONTENT_PATH = "cid/config/config_content.json";

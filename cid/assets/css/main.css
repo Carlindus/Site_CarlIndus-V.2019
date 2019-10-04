@@ -12,15 +12,36 @@
   font-style: normal;
 }
 
+/****************
+
+*   VARIABLES   *
+
+****************/
 :root {
   --main-bg-color: #008080;
+
+  --bgColorBtn: #C8C8C8;
+  --borderBtnTop: 2px solid #e6e6e6;
+  --borderBtnLeft: var(--borderBtnTop);
+  --borderBtnBottom: 2px solid #848484;
+  --borderBtnRight: var(--borderBtnBottom);
+
+  --bgColorBtnHover: #ededed;
+  --borderBtnTopHover: var(--borderBtnBottom);
+  --borderBtnLeftHover: var(--borderBtnBottom);
+  --borderBtnBottomHover: var(--borderBtnTop);
+  --borderBtnRightHover: var(--borderBtnTop);
+
+
 }
+
 
 /****************
 
 *   GENERAL   *
 
 ****************/
+
 
 * {
   margin: 0;
@@ -42,6 +63,10 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+li {
+  list-style: none;
 }
 
 /****************
@@ -127,11 +152,13 @@ a {
 .top_left {
   grid-column: 1;
   grid-row: 1;
+  align-items: center;
 }
 
 .top_center {
   grid-column: 2;
   grid-row: 1;
+  align-items: center;
 }
 
 .top_right {
@@ -262,20 +289,39 @@ a {
   display: none;
   position: absolute;
   bottom: 2rem;
-  min-width: 100px;
-  min-height: 200px;
   background: lightgray;
+  padding: 1px;
+  border-top: var(--borderBtnTop);
+  border-left: var(--borderBtnLeft);
+  border-bottom: var(--borderBtnBottom);
+  border-right: var(--borderBtnRight);
 }
 
 #startmenu-btn:hover nav {
   display: block;
+
 }
 
 /* START MENU NAV */
 
+#taskbar nav h2 {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-weight: 100;
+  padding: 10px 0px 10px 3px;
+  letter-spacing: 1px;
+  float: left;
+}
+
 #taskbar nav ul li {
   height: 25px;
   width: auto;
+  min-width: 150px;
+}
+
+#taskbar nav ul li p {
+  white-space: nowrap;
 }
 
 #startmenu-btn:hover,
@@ -300,13 +346,30 @@ a {
   align-items: center;
   height: 100%;
   width: auto;
-  border-top: 2px solid #e6e6e6;
-  border-left: 2px solid #e6e6e6;
-  border-bottom: 2px solid #848484;
-  border-right: 2px solid #848484;
-  margin: 0 1px;
-  padding: 2px;
+  margin: 2px;
+  padding: 2px 5px;
   user-select: none;
+}
+
+.btn {
+  background-color: var(--bgColorBtn);
+  border-top: var(--borderBtnTop);
+  border-left: var(--borderBtnLeft);
+  border-bottom: var(--borderBtnBottom);
+  border-right: var(--borderBtnRight);
+}
+
+.btn:hover {
+  background-color: var(--bgColorBtnHover);
+}
+
+.btn:active {
+  background-color: var(--bgColorBtnHover);
+  border-top: var(--borderBtnTopHover);
+  border-left: var(--borderBtnLeftHover);
+  border-bottom: var(--borderBtnBottomHover);
+  border-right: var(--borderBtnRightHover);
+
 }
 
 .menuItem:hover {

@@ -16,7 +16,7 @@ class MenuItem{
         global $ASSETS_PATH;
 
         return (
-            '<a class="menuItem" href="'.$this->targetURL.'">
+            '<a class="menuItem btn" href="'.$this->targetURL.'">
                 <img   src="'.$ASSETS_PATH.'/img/siteIcons/'.$this->getImg().'"/>
                 <p>'.$this->name.'</p>
             </a>'
@@ -78,6 +78,3 @@ class MenuItem{
 		return $this;
 	}
 }
-
-
-?>
