@@ -22,7 +22,7 @@ class Taskbar
         return ('<section id="taskbar" >
                 <div id="startmenu-btn">
                     <nav id="startmenu-nav">
-                        <h2>CarlIndus Website</h2>
+                        <h2><span>Website</span> CarlIndus</h2>
                     <ul>'
             . $this->getMenuItems() .
             '</ul>

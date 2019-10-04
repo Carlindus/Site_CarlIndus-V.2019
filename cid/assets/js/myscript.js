@@ -134,10 +134,10 @@ $(document).ready(function () {
   function addEventListenerMinimizeWindow(iconId) {
     $('#' + iconId + ' .minimize-window').click(() => {
       closeWindow(iconId);
-      if (!$('#' + iconId + '-menu-item').length) {
+      if (!$('#' + iconId + '-taskbar-item').length) {
         $('#minimize-windows-area').append(createLink(iconId));
       }
-      $('#' + iconId + '-menu-item').click(() => {
+      $('#' + iconId + '-taskbar-item').click(() => {
         $('#' + iconId).toggleClass("window-opened");
       });
     });
@@ -161,14 +161,14 @@ $(document).ready(function () {
   function closeWindow(id) {
     $('#' + id).removeClass("window-opened");
     // if shortcut exist on taskbar-> delete it
-    if ($('#' + id + '-menu-item').length) {
+    if ($('#' + id + '-taskbar-item').length) {
       destroyLink(id);
     }
   }
 
   function createLink(id) {
     let link =
-      '<div id="' + id + '-menu-item" class="menuItem">' +
+      '<div id="' + id + '-taskbar-item" class="taskItem btn">' +
       '<img src="' + getImgUrlFromDirectory(id) + '"/>' +
       '<p>' + getNameFromDirectory(id) + '</p>' +
       '</div>';
@@ -177,7 +177,7 @@ $(document).ready(function () {
 
   function destroyLink(id) {
     console.log('destroy');
-    $('#' + id + '-menu-item').remove('div');
+    $('#' + id + '-taskbar-item').remove('div');
   }
 
   function getImgUrlFromDirectory(iconId) {

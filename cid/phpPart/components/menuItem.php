@@ -1,34 +1,36 @@
 <?php
 
-class MenuItem{
-    
-    private $name;
-    private $targetURL;
-    private $img;
+class MenuItem
+{
 
-    function __construct($name, $targetURL, $img){
-        $this->name = $name;
-        $this->targetURL = $targetURL;
-        $this->img = $img;
-    }
+	private $name;
+	private $targetURL;
+	private $img;
 
-    function createMenuItem(){
-        global $ASSETS_PATH;
+	function __construct($name, $targetURL, $img)
+	{
+		$this->name = $name;
+		$this->targetURL = $targetURL;
+		$this->img = $img;
+	}
 
-        return (
-            '<a class="menuItem btn" href="'.$this->targetURL.'">
-                <img   src="'.$ASSETS_PATH.'/img/siteIcons/'.$this->getImg().'"/>
-                <p>'.$this->name.'</p>
-            </a>'
-        );
-    }
+	function createMenuItem()
+	{
+		global $ASSETS_PATH;
+
+		return ('<a class="menuItem" href="' . $this->targetURL . '">
+                <img   src="' . $ASSETS_PATH . '/img/siteIcons/' . $this->getImg() . '"/>
+                <p>' . $this->name . '</p>
+            </a>');
+	}
 
 
 	/**
 	 * Get the value of name
 	 * @return  mixed
 	 */
-	public function getName(){
+	public function getName()
+	{
 		return $this->name;
 	}
 
@@ -37,7 +39,8 @@ class MenuItem{
 	 * @param   mixed  $name  
 	 * @return  self
 	 */
-	public function setName($name){
+	public function setName($name)
+	{
 		$this->name = $name;
 		return $this;
 	}
@@ -46,7 +49,8 @@ class MenuItem{
 	 * Get the value of targetURL
 	 * @return  mixed
 	 */
-	public function getTargetURL(){
+	public function getTargetURL()
+	{
 		return $this->targetURL;
 	}
 
@@ -55,7 +59,8 @@ class MenuItem{
 	 * @param   mixed  $targetURL  
 	 * @return  self
 	 */
-	public function setTargetURL($targetURL){
+	public function setTargetURL($targetURL)
+	{
 		$this->targetURL = $targetURL;
 		return $this;
 	}
@@ -64,7 +69,8 @@ class MenuItem{
 	 * Get the value of img
 	 * @return  mixed
 	 */
-	public function getImg(){
+	public function getImg()
+	{
 		return $this->img;
 	}
 
@@ -73,7 +79,8 @@ class MenuItem{
 	 * @param   mixed  $img  
 	 * @return  self
 	 */
-	public function setImg($img){
+	public function setImg($img)
+	{
 		$this->img = $img;
 		return $this;
 	}
