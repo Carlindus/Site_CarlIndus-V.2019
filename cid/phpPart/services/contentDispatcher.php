@@ -14,7 +14,11 @@ class ContentDispatcher
         $this->taskbarContent = [];
         $this->desktopContent = [];
     }
-
+    /**
+     * Read the content in the config file
+     * and push it into the right container (desktop and/or taskbar)
+     * @param Object $content of configuration file
+     */
     public function dispatch($content)
     {
         foreach ($content as $elem) {

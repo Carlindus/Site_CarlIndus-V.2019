@@ -32,6 +32,10 @@ class Icon
         if (property_exists($icon, 'isForm')) $this->isForm = true;
     }
 
+    /** 
+     * Create a DOM structure for icon.
+     * @return String of HTML
+     */
     function createIcon()
     {
         return ('<div class="icons">'
@@ -42,7 +46,10 @@ class Icon
             </div>');
     }
 
-
+    /** 
+     * Get the link depending of the URL type.
+     * @return String of HTML
+     */
     private function getIconLink()
     {
         global $RELATIVE_PATH;
@@ -58,6 +65,10 @@ class Icon
         return $iconLink;
     }
 
+    /** 
+     * Get the link depending of the type.
+     * @return String of HTML
+     */
     private function getIconImage()
     {
         global $ASSETS_PATH;
@@ -80,11 +91,21 @@ class Icon
         return $iconImg;
     }
 
+    /** 
+     * Test if URL is an external link (http).
+     * @param String $urlToCheck
+     * @return Boolean
+     */
     function isHttpUrl($urlToCheck)
     {
         return (strtoupper(substr($urlToCheck, 0, 4)) === "HTTP") ? true : false;
     }
 
+    /** 
+     * Test if URL is an internal link (anchor).
+     * @param String $urlToCheck
+     * @return Boolean 
+     */
     function isAnchorURL($urlToCheck)
     {
         return (substr($urlToCheck, 0, 1) === "#") ? true : false;

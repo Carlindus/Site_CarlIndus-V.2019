@@ -2,7 +2,7 @@
 
 <?php
 
-// autoload Components
+// autoload all components & services 
 spl_autoload_register(function ($class_name) {
 
   $sources = array(
@@ -17,13 +17,17 @@ spl_autoload_register(function ($class_name) {
   }
 });
 
-
+// get the content of the site
+// from the config-content file define in config_site.php
 $dispatcher = new ContentDispatcher();
 $dispatcher->dispatch($CONTENT);
+
 // Create the desktop content 
 $myDesktop = new Desktop($dispatcher->getDesktopContent());
-$myTaskbar = new Taskbar($dispatcher->getTaskbarContent());
 echo $myDesktop->createDesktop();
+
+// Create taskbar
+$myTaskbar = new Taskbar($dispatcher->getTaskbarContent());
 echo $myTaskbar->createTaskbar();
 
 ?>

@@ -6,7 +6,6 @@ class Taskbar
     private $content;
     private $menuItems;
 
-    //TODO gestion et test du $taskbarContent
 
     function __construct($taskbarContent)
     {
@@ -14,6 +13,10 @@ class Taskbar
         $this->menuItems = '';
     }
 
+    /**
+     * Create the DOM structure for the taskbar
+     * @return String of HTML
+     */
     function createTaskbar()
     {
         global $ASSETS_PATH;
@@ -44,16 +47,25 @@ class Taskbar
             </section>');
     }
 
-    function addMenuItem($name, $targetURL, $img)
+    /**
+     * Generate a link
+     * @param Object $link
+     * @return String of HTML
+     */
+    function addMenuItem($link)
     {
-        $menuItem = new MenuItem($name, $targetURL, $img);
+        $menuItem = new MenuItem($link->name, $link->url, $link->img);
         return $menuItem->createMenuItem();
     }
 
+    /**
+     * Generate list of links 
+     * @return String of HTML
+     */
     function addAllMenuItems()
     {
-        foreach ($this->content as $key => $value) {
-            $this->menuItems .= '<li>' . $this->addMenuItem($value->name, $value->url, $value->img) . '</li>';
+        foreach ($this->content as $key => $link) {
+            $this->menuItems .= '<li>' . $this->addMenuItem($link) . '</li>';
         }
     }
 

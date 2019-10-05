@@ -14,6 +14,10 @@ class MenuItem
 		$this->img = $img;
 	}
 
+	/**
+	 * Create the DOM structure for link in menu
+	 * @return String of HTML
+	 */
 	function createMenuItem()
 	{
 		global $ASSETS_PATH;
