@@ -1,31 +1,37 @@
-<?php 
+<?php
 
-class Window {
-    
+class Window
+{
 
-    private $id;
-    private $title;
-    private $img;
-    private $content;
 
-    function __construct($id, $title, $img, $DOMContent){
-        $this->id = $id;
-        $this->title = $title;
-        $this->img = $img;
-        $this->content = $DOMContent;
-    }
+	private $id;
+	private $title;
+	private $img;
+	private $content;
 
-    function createWindow(){
+	function __construct($id, $title, $img, $DOMContent)
+	{
+		$this->id = $id;
+		$this->title = $title;
+		$this->img = $img;
+		$this->content = $DOMContent;
+	}
+
+	/**
+	 * Create the DOM structure of a window
+	 * @return String of HTML
+	 */
+	function createWindow()
+	{
 		global $ASSETS_PATH;
 
-        return (
-            '<article   id="'.$this->getId().'"
+		return ('<article   id="' . $this->getId() . '"
 						class="directory"
 						data-position="unset">
 				<div class="top-bar">
 					<div class="top-bar-title">
-						<img src="'.$ASSETS_PATH.'/img/siteIcons/'.$this->getImg().'" />
-						<p> '.$this->getTitle().' </p>
+						<img src="' . $ASSETS_PATH . '/img/siteIcons/' . $this->getImg() . '" />
+						<p> ' . $this->getTitle() . ' </p>
 					</div>
 					<div class="top-bar-buttons">
 						<div class="minimize-window">
@@ -44,17 +50,17 @@ class Window {
 					</div>
                 </div>
                 <div class="iconsContainer">
-                '.$this->getContent().'
+                ' . $this->getContent() . '
                 </div>
-            </article>'
-        );
-    }
+            </article>');
+	}
 
 	/**
 	 * Get the value of title
 	 * @return  mixed
 	 */
-	public function getTitle(){
+	public function getTitle()
+	{
 		return $this->title;
 	}
 
@@ -63,7 +69,8 @@ class Window {
 	 * Get the value of content
 	 * @return  mixed
 	 */
-	public function getContent(){
+	public function getContent()
+	{
 		return $this->content;
 	}
 
@@ -72,7 +79,8 @@ class Window {
 	 * Get the value of id
 	 * @return  mixed
 	 */
-	public function getId(){
+	public function getId()
+	{
 		return $this->id;
 	}
 
@@ -81,11 +89,8 @@ class Window {
 	 * Get the value of img
 	 * @return  mixed
 	 */
-	public function getImg(){
+	public function getImg()
+	{
 		return $this->img;
 	}
 }
-
-
-
-?>

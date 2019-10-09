@@ -18,20 +18,23 @@ class Icon
 
     function __construct($icon)
     {
-        $this->type = $icon->type;
-        $this->location = $icon->location;
-        $this->id = $icon->id;
-        $this->name = $icon->name;
-        $this->url = $icon->url;
-        $this->img = $icon->img;
-        $this->alt = $icon->alt;
-        $this->title = $icon->title;
-        $this->content = $icon->content;
+        $this->type = $icon['type'];
+        $this->id = $icon['id'];
+        $this->name = $icon['name'];
+        $this->url = $icon['url'];
+        $this->img = $icon['img'];
+        $this->alt = $icon['alt'];
+        $this->title = $icon['title'];
+        $this->content = $icon['content'];
 
-        // Form
-        if (property_exists($icon, 'isForm')) $this->isForm = true;
+        if (array_key_exists('location', $icon)) $this->location = $icon['location'];
+        if (array_key_exists('isForm', $icon)) $this->isForm = $icon['isForm'];
     }
 
+    /** 
+     * Create a DOM structure for icon.
+     * @return String of HTML
+     */
     function createIcon()
     {
         return ('<div class="icons">'
@@ -42,7 +45,10 @@ class Icon
             </div>');
     }
 
-
+    /** 
+     * Get the link depending of the URL type.
+     * @return String of HTML
+     */
     private function getIconLink()
     {
         global $RELATIVE_PATH;
@@ -58,6 +64,10 @@ class Icon
         return $iconLink;
     }
 
+    /** 
+     * Get the link depending of the type.
+     * @return String of HTML
+     */
     private function getIconImage()
     {
         global $ASSETS_PATH;
@@ -80,11 +90,21 @@ class Icon
         return $iconImg;
     }
 
+    /** 
+     * Test if URL is an external link (http).
+     * @param String $urlToCheck
+     * @return Boolean
+     */
     function isHttpUrl($urlToCheck)
     {
         return (strtoupper(substr($urlToCheck, 0, 4)) === "HTTP") ? true : false;
     }
 
+    /** 
+     * Test if URL is an internal link (anchor).
+     * @param String $urlToCheck
+     * @return Boolean 
+     */
     function isAnchorURL($urlToCheck)
     {
         return (substr($urlToCheck, 0, 1) === "#") ? true : false;

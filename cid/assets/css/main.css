@@ -89,11 +89,7 @@ li {
   width: 100%;
   height: auto;
   transform-origin: center center;
-
-  opacity: 0.2;
-  /* TODO take off comment
   animation: logoWin 3s linear forwards;
-  */
 }
 
 @keyframes logoWin {
@@ -230,8 +226,7 @@ li {
   height: 100%;
 }
 
-/*******************
-*  TASKBAR CONFIG  *
+/******************** TASKBAR CONFIG *
 *******************/
 #taskbar {
   z-index: 10;
@@ -305,13 +300,20 @@ li {
 /* START MENU NAV */
 
 #taskbar nav h2 {
+  float: left;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   transform: rotate(180deg);
   font-weight: 100;
-  padding: 10px 0px 10px 3px;
   letter-spacing: 1px;
-  float: left;
+  padding: 10px 0px 10px 3px;
+  background: grey;
+  color: snow;
+}
+
+#taskbar nav h2 span {
+  font-variant: small-caps slashed-zero;
+  color: lightgrey;
 }
 
 #taskbar nav ul li {
@@ -325,8 +327,14 @@ li {
 }
 
 #startmenu-btn:hover,
-.menuItem:hover {
+.taskItem:hover {
   background-color: #ededed;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background-color: #0000b3;
+  color: #f5f5f5;
   cursor: pointer;
 }
 
@@ -341,6 +349,7 @@ li {
   margin: 0 3px;
 }
 
+.taskItem,
 .menuItem {
   display: flex;
   align-items: center;
@@ -372,11 +381,13 @@ li {
 
 }
 
-.menuItem:hover {
+.taskItem:hover,
+.menuitem:hover {
   cursor: pointer;
 }
 
 
+.taskItem img,
 .menuItem img {
   height: 60%;
   margin-right: 5px;
@@ -408,12 +419,9 @@ li {
   padding: 5px;
 }
 
-.icons {
-  opacity: 1;
-  /* TODO take off comment
+.desktopContainer .icons {
   opacity: 0;
   animation: iconsAppeared 0.3s linear 3.5s forwards;
-  */
 }
 
 .iconsContainer {
@@ -453,7 +461,7 @@ li {
 }
 
 .icons a:hover h2 {
-  background: #000080;
+  background: #0000b3;
   color: #f5f5f5;
 }
 
@@ -492,7 +500,7 @@ li {
 }
 
 article:hover .top-bar {
-  background: #000080;
+  background: #0000b3;
 }
 
 .top-bar-title {
@@ -694,7 +702,7 @@ button[name="send-form"] {
 
 button[name="send-form"]:hover,
 button[name="send-form"]:active {
-  background: #000080;
+  background: #0000b3;
   color: #f5f5f5;
 }
 

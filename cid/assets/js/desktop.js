@@ -6,7 +6,6 @@ $(document).ready(function () {
 
   $(function onLoad() {
 
-    console.log("myscript.js loaded");
     // Add Listener to icons & draggableAction to all windows
     // TODO load the path from config file
     var CONFIG_CONTENT_PATH = "cid/config/config_content.json";
@@ -24,12 +23,12 @@ $(document).ready(function () {
   // zone for possible displaying the top left of the window directory
   // in percentage of the document size
   const LANDSCAPE_WINDOW = {
-    "min": { "x": 0.25, "y": 0.25 },
-    "max": { "x": 0.5, "y": 0.5 }
+    "min": { "x": 0.25, "y": 0.1 },
+    "max": { "x": 0.5, "y": 0.4 }
   }
   const PORTRAIT_WINDOW = {
-    "min": { "x": 0.25, "y": 0.25 },
-    "max": { "x": 0.5, "y": 0.5 }
+    "min": { "x": 0.1, "y": 0.1 },
+    "max": { "x": 0.25, "y": 0.25 }
   }
 
   let currentDocumentSize = { "height": 0, "width": 0 };
@@ -104,6 +103,7 @@ $(document).ready(function () {
    * Add Listeners on click to the icons of directory target
    */
   function addEventListenersOnIcon(iconId) {
+    addEventListenerOnTouchMove(iconId);
     addEventListenerOpenWindow(iconId);
     addEventListenerCloseWindow(iconId);
     addEventListenerMaximizeWindow(iconId);
@@ -134,13 +134,17 @@ $(document).ready(function () {
   function addEventListenerMinimizeWindow(iconId) {
     $('#' + iconId + ' .minimize-window').click(() => {
       closeWindow(iconId);
-      if (!$('#' + iconId + '-menu-item').length) {
+      if (!$('#' + iconId + '-taskbar-item').length) {
         $('#minimize-windows-area').append(createLink(iconId));
       }
-      $('#' + iconId + '-menu-item').click(() => {
+      addEventListenerOnTouchMove.click(() => {
         $('#' + iconId).toggleClass("window-opened");
       });
     });
+  }
+
+  function addEventListenerOnTouchMove(iconId) {
+    $('#' + iconId + ' .top-bar-title').on({ 'touchstart': draggableWindows });
   }
 
   function openWindow(id) {
@@ -161,14 +165,14 @@ $(document).ready(function () {
   function closeWindow(id) {
     $('#' + id).removeClass("window-opened");
     // if shortcut exist on taskbar-> delete it
-    if ($('#' + id + '-menu-item').length) {
+    if ($('#' + id + '-taskbar-item').length) {
       destroyLink(id);
     }
   }
 
   function createLink(id) {
     let link =
-      '<div id="' + id + '-menu-item" class="menuItem">' +
+      '<div id="' + id + '-taskbar-item" class="taskItem btn">' +
       '<img src="' + getImgUrlFromDirectory(id) + '"/>' +
       '<p>' + getNameFromDirectory(id) + '</p>' +
       '</div>';
@@ -177,7 +181,7 @@ $(document).ready(function () {
 
   function destroyLink(id) {
     console.log('destroy');
-    $('#' + id + '-menu-item').remove('div');
+    $('#' + id + '-taskbar-item').remove('div');
   }
 
   function getImgUrlFromDirectory(iconId) {
