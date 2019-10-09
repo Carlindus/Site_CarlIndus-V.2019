@@ -1,35 +1,13 @@
 <?php
 
-/**
-* @copyright Copyright (c) 2014, Google Inc.
-* @link      http://www.google.com/recaptcha
-*/
-require_once $PHP_PATH."/contact/recaptchalib.php";
-
-$reCaptcha = new ReCaptcha($RECAPTCHA_SECRET);
-// The response from reCAPTCHA
-$resp = null;
-// The error code from reCAPTCHA, if any
-$error = null;
-
-// Was there a reCAPTCHA response?
-if ($_POST["g-recaptcha-response"]) {
-    $resp = $reCaptcha->verifyResponse(
-        $_SERVER["REMOTE_ADDR"],
-        $_POST["g-recaptcha-response"]
-    );
-}
-
 /**** CONTACT FORM ****/
 
 /* validate the form */
 
-$contactForm = ($response != null && $response->success) ?
-  'Hi'  . $_POST["name"] . ' (' . $_POST["email"] . '), thanks for submitting the form!'
-    :
+$contactForm =
   '<div class="repertory">
     <form  class=""
-           action="'.$PHP_PATH.'/contact/traitement.php"
+           action="' . $PHP_PATH . '/contact/traitement.php"
            method="post"
            data-validForm="true" />
 
@@ -75,7 +53,7 @@ $contactForm = ($response != null && $response->success) ?
       </label>
 
       <div  class="g-recaptcha" 
-            data-sitekey="'.$RECAPTCHA_KEY.'" 
+            data-sitekey="' . $RECAPTCHA_KEY . '" 
             data-callback="enableSubmitBtn" 
             data-expired-callback="disableSubmitBtn">
       </div>
@@ -92,13 +70,11 @@ echo $contactFormWindow->createWindow();
 
 /**** THANK FOR THE MESSAGE ****/
 
-$thanksMessage = 
+$thanksMessage =
   '<div class="thanks">
     <h3>Votre message à bien été envoyé</h3>
     <p>Je vous remercie de votre attention.<br />Je reprendrais contact avec vous dans les plus brefs délais</p>
   </div>';
 
-$thanksWindow = new Window('confirmSendForm', 'Réception de votre message',$contactFormImg, $thanksMessage );
+$thanksWindow = new Window('confirmSendForm', 'Réception de votre message', $contactFormImg, $thanksMessage);
 echo $thanksWindow->createWindow();
-
-?>

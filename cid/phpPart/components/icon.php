@@ -18,18 +18,17 @@ class Icon
 
     function __construct($icon)
     {
-        $this->type = $icon->type;
-        $this->location = $icon->location;
-        $this->id = $icon->id;
-        $this->name = $icon->name;
-        $this->url = $icon->url;
-        $this->img = $icon->img;
-        $this->alt = $icon->alt;
-        $this->title = $icon->title;
-        $this->content = $icon->content;
+        $this->type = $icon['type'];
+        $this->id = $icon['id'];
+        $this->name = $icon['name'];
+        $this->url = $icon['url'];
+        $this->img = $icon['img'];
+        $this->alt = $icon['alt'];
+        $this->title = $icon['title'];
+        $this->content = $icon['content'];
 
-        // Form
-        if (property_exists($icon, 'isForm')) $this->isForm = true;
+        if (array_key_exists('location', $icon)) $this->location = $icon['location'];
+        if (array_key_exists('isForm', $icon)) $this->isForm = $icon['isForm'];
     }
 
     /** 

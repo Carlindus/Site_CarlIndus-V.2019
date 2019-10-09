@@ -36,21 +36,27 @@ class Desktop
 	private function createDesktopIconContainer()
 	{
 
-		$desktopIconLocation = (object) array(); // list of the icons for each zones
+		$desktopIconLocation = array(); // list of the icons for each zones
 		$desktopIconContainers = ''; // DOM of the icons'containers
 		$desktopWindows = ''; // DOM of the window directory for each icon's directory
 
-		foreach ($this->content as $icon) {
+		foreach ($this->content as $elem => $icon) {
 
-			if (property_exists($icon, 'location')) {
-				foreach ($icon->location as $iconLocation) {
+			if (array_key_exists('location', $icon)) {
+				foreach ($icon['location'] as $key => $iconLocation) {
 
-					if ($iconLocation->component == "desktop") {
+
+					if ($iconLocation['component'] == "desktop") {
 						$desktopIcon = new Icon($icon);
 						$myLocation = $this->getDesktopPosition($icon);
-						$desktopIconLocation->$myLocation .= $desktopIcon->createIcon();
+						// TODO find a best way to do this
+						if (array_key_exists($myLocation, $desktopIconLocation)) {
+							$desktopIconLocation[$myLocation] .= $desktopIcon->createIcon();
+						} else {
+							$desktopIconLocation[$myLocation] = $desktopIcon->createIcon();
+						}
 
-						if ($icon->type == "directory") {
+						if ($icon['type'] == "directory") {
 							$window = new WindowDirectory($icon);
 							$desktopWindows .= $window->createWindowDirectory();
 						}
@@ -79,9 +85,9 @@ class Desktop
 	 */
 	public function getDesktopPosition($icon)
 	{
-		foreach ($icon->location as $element) {
-			if ($element->component == "desktop") {
-				return $element->position;
+		foreach ($icon['location'] as $key => $location) {
+			if ($location['component'] == "desktop") {
+				return $location['position'];
 			}
 		}
 		return null;

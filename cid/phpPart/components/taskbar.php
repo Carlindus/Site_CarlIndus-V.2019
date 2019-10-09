@@ -54,7 +54,7 @@ class Taskbar
      */
     function addMenuItem($link)
     {
-        $menuItem = new MenuItem($link->name, $link->url, $link->img);
+        $menuItem = new MenuItem($link['name'], $link['url'], $link['img']);
         return $menuItem->createMenuItem();
     }
 

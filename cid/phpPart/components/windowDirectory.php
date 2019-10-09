@@ -13,11 +13,11 @@ class WindowDirectory
 
     function __construct($iconParent)
     {
-        $this->id = $iconParent->id;
-        $this->name = $iconParent->name;
-        $this->img = $iconParent->img;
-        $this->content = $iconParent->content;
-        $this->type = $iconParent->type;
+        $this->id = $iconParent['id'];
+        $this->name = $iconParent['name'];
+        $this->img = $iconParent['img'];
+        $this->content = $iconParent['content'];
+        $this->type = $iconParent['type'];
     }
 
     /**
@@ -26,7 +26,6 @@ class WindowDirectory
      */
     function createWindowDirectory()
     {
-
         $windowDir = "";
         if ($this->type == "directory") {
             $windowContent = $this->addIconsInWindow($this->content);
@@ -63,7 +62,7 @@ class WindowDirectory
     {
         $windowContentLinked = '';
         foreach ($windowLinked as $key => $value) {
-            if ($value->type == "directory") {
+            if ($value['type'] == "directory") {
                 $newWindow = new WindowDirectory($value);
                 $windowContentLinked .= $newWindow->createWindowDirectory();
             }
