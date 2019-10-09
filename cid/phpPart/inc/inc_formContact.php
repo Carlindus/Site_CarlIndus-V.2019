@@ -1,5 +1,9 @@
 <?php
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 17489859d6af3de327b7c9b7569be617774e759b
 /**** CONTACT FORM ****/
 
 /* validate the form */
@@ -11,7 +15,7 @@ $contactForm =
            method="post"
            data-validForm="true" />
 
-      <label  for="name">Veuillez indiquer votre nom * : 
+      <label  for="name">Veuillez indiquer votre nom : 
         <input  id="name" 
                 name="name" 
                 value="" 
@@ -28,7 +32,7 @@ $contactForm =
                 placeholder="Prénom" />
       </label>
 
-      <label for="email">Veuillez indiquer votre e-mail * :
+      <label for="email">Veuillez indiquer votre e-mail :
           <input  id="email"
                   name="email"
                   value=""
@@ -38,7 +42,7 @@ $contactForm =
                   placeholder="E-mail" />
       </label>
       
-      <label for="message">Veuillez écrire votre message * : 
+      <label for="message">Veuillez écrire votre message : 
         <textarea   id="message"
                     name="message"
                     rows="4"
@@ -49,21 +53,24 @@ $contactForm =
       </label>
       
       <label>
-        <span>Les champs suivis d\'une étoile (*) sont obligatoires</span>
+        <span>* Tous les champs sont obligatoires</span>
       </label>
 
+<<<<<<< HEAD
+=======
       <div  class="g-recaptcha" 
             data-sitekey="' . $RECAPTCHA_KEY . '" 
             data-callback="enableSubmitBtn" 
             data-expired-callback="disableSubmitBtn">
       </div>
 
+>>>>>>> 17489859d6af3de327b7c9b7569be617774e759b
       <button class="btnWin31" name="sendForm" id="sendForm" type="submit">Envoyer</button>
       <button name="reset" type="reset">Réinitialiser</button>
     </form>
   </div>';
 
-$contactFormImg = 'contact-cid.png';
+$contactFormImg = 'icon_contactCid.png';
 
 $contactFormWindow = new Window('contactForm', 'CarlIndus Design - Messagerie', $contactFormImg, $contactForm);
 echo $contactFormWindow->createWindow();
