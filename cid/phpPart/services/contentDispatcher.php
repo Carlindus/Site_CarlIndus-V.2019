@@ -11,8 +11,8 @@ class ContentDispatcher
 
     function __construct()
     {
-        $this->taskbarContent = [];
-        $this->desktopContent = [];
+        $this->taskbarContent = array();
+        $this->desktopContent = array();
     }
     /**
      * Read the content in the config file

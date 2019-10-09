@@ -1,9 +1,9 @@
-// JS récupérer sur CodePen à l'adresse : https://codepen.io/arcs/pen/vOwJBw
 ;(function() {
   "use strict";
+
   // General
   var canvas,
-    gameScreen,
+    screen,
     gameSize,
     game;
 
@@ -106,25 +106,25 @@
     draw: function() {
 
       if (this.lost) {
-        gameScreen.fillStyle = "rgba(0, 0, 0, 0.03)";
-        gameScreen.fillRect(0, 0, gameSize.width, gameSize.height);
+        screen.fillStyle = "rgba(0, 0, 0, 0.03)";
+        screen.fillRect(0, 0, gameSize.width, gameSize.height);
 
-        gameScreen.font = "55px Lucida Console";
-        gameScreen.textAlign = "center";
-        gameScreen.fillStyle = "white";
-        gameScreen.fillText("Vous avez perdu", gameSize.width / 2, gameSize.height / 2);
-        gameScreen.font = "20px Lucida Console";
-        gameScreen.fillText("Points: " + kills, gameSize.width / 2, gameSize.height / 2 + 30);
+        screen.font = "55px Lucida Console";
+        screen.textAlign = "center";
+        screen.fillStyle = "white";
+        screen.fillText("You lost", gameSize.width / 2, gameSize.height / 2);
+        screen.font = "20px Lucida Console";
+        screen.fillText("Points: " + kills, gameSize.width / 2, gameSize.height / 2 + 30);
 
       } else {
-        gameScreen.clearRect(0, 0, gameSize.width, gameSize.height);
+        screen.clearRect(0, 0, gameSize.width, gameSize.height);
 
-        gameScreen.font = "10px Lucida Console";
-        gameScreen.textAlign = "right";
-        gameScreen.fillText("Points: " + kills, gameSize.width, gameSize.height - 12);
+        screen.font = "10px Lucida Console";
+        screen.textAlign = "right";
+        screen.fillText("Points: " + kills, gameSize.width, gameSize.height - 12);
       }
 
-      gameScreen.beginPath();
+      screen.beginPath();
 
       var i;
       this.player.draw();
@@ -132,7 +132,7 @@
         for (i = 0; i < this.invaders.length; i++) this.invaders[i].draw();
       for (i = 0; i < this.invaderShots.length; i++) this.invaderShots[i].draw();
 
-      gameScreen.fill();
+      screen.fill();
 
     },
 
@@ -176,7 +176,7 @@
 
     },
     draw: function() {
-      if (this.active) gameScreen.drawImage(invaderCanvas, this.coordinates.x, this.coordinates.y);
+      if (this.active) screen.drawImage(invaderCanvas, this.coordinates.x, this.coordinates.y);
 
     },
     move: function() {
@@ -252,9 +252,9 @@
     },
     draw: function() {
       if (this.active) {
-        gameScreen.rect(this.coordinates.x, this.coordinates.y, this.size.width, this.size.height);
-        gameScreen.rect(this.coordinates.x - 2, this.coordinates.y + 2, 20, 6);
-        gameScreen.rect(this.coordinates.x + 6, this.coordinates.y - 4, 4, 4);
+        screen.rect(this.coordinates.x, this.coordinates.y, this.size.width, this.size.height);
+        screen.rect(this.coordinates.x - 2, this.coordinates.y + 2, 20, 6);
+        screen.rect(this.coordinates.x + 6, this.coordinates.y - 4, 4, 4);
       }
 
       for (var i = 0; i < this.projectile.length; i++) this.projectile[i].draw();
@@ -287,7 +287,7 @@
 
     },
     draw: function() {
-      if (this.active) gameScreen.rect(this.coordinates.x, this.coordinates.y, this.size.width, this.size.height);
+      if (this.active) screen.rect(this.coordinates.x, this.coordinates.y, this.size.width, this.size.height);
 
     }
   };
@@ -381,14 +381,14 @@
 
       // Game Creation
       canvas = document.getElementById("space-invaders");
-      gameScreen = canvas.getContext('2d');
+      screen = canvas.getContext('2d');
 
       initGameStart();
       loop();
 
     };
-    //invaderAsset.src = "//stillh.art/project/spaceInvaders/invader.gif";
-    invaderAsset.src = "../cid/img/invader.gif";
+    invaderAsset.src = "//stillh.art/project/spaceInvaders/invader.gif";
+
   });
 
   window.addEventListener('resize', function() {
@@ -400,8 +400,8 @@
 
   function initGameStart() {
     if (window.innerWidth > 1200) {
-      gameScreen.canvas.width = 1200;
-      gameScreen.canvas.height = 500;
+      screen.canvas.width = 1200;
+      screen.canvas.height = 500;
       gameSize = {
         width: 1200,
         height: 500
@@ -409,8 +409,8 @@
       invaderMultiplier = 3;
       initialOffsetInvader = 420;
     } else if (window.innerWidth > 800) {
-      gameScreen.canvas.width = 900;
-      gameScreen.canvas.height = 600;
+      screen.canvas.width = 900;
+      screen.canvas.height = 600;
       gameSize = {
         width: 900,
         height: 600
@@ -418,8 +418,8 @@
       invaderMultiplier = 2;
       initialOffsetInvader = 280;
     } else {
-      gameScreen.canvas.width = 600;
-      gameScreen.canvas.height = 300;
+      screen.canvas.width = 600;
+      screen.canvas.height = 300;
       gameSize = {
         width: 600,
         height: 300

@@ -36,7 +36,7 @@ class Desktop
 	private function createDesktopIconContainer()
 	{
 
-		$desktopIconLocation = (object) []; // list of the icons for each zones
+		$desktopIconLocation = (object) array(); // list of the icons for each zones
 		$desktopIconContainers = ''; // DOM of the icons'containers
 		$desktopWindows = ''; // DOM of the window directory for each icon's directory
 
