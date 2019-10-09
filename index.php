@@ -22,16 +22,6 @@ include($PHP_PATH . '/inc/inc_head.php');
   <script type="text/javascript" src="<?php echo $ASSETS_PATH ?>/js/desktop.js" async defer></script>
   <script type="text/javascript" src="<?php echo $ASSETS_PATH ?>/js/taskbar.js" async defer></script>
   <script type="text/javascript" src="<?php echo $ASSETS_PATH ?>/js/validform.js" async defer></script>
-
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script type="text/javascript">
-    var onloadCallback = function() {
-      alert("grecaptcha is ready!");
-    };
-  </script>
-
-
-
 </body>
 
 </html>

@@ -23,12 +23,12 @@ $(document).ready(function () {
   // zone for possible displaying the top left of the window directory
   // in percentage of the document size
   const LANDSCAPE_WINDOW = {
-    "min": { "x": 0.25, "y": 0.25 },
-    "max": { "x": 0.5, "y": 0.5 }
+    "min": { "x": 0.20, "y": 0.25 },
+    "max": { "x": 0.4, "y": 0.4 }
   }
   const PORTRAIT_WINDOW = {
-    "min": { "x": 0.25, "y": 0.25 },
-    "max": { "x": 0.5, "y": 0.5 }
+    "min": { "x": 0.10, "y": 0.10 },
+    "max": { "x": 0.3, "y": 0.10 }
   }
 
   let currentDocumentSize = { "height": 0, "width": 0 };

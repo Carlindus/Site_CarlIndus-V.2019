@@ -17,25 +17,25 @@ class ContentDispatcher
     /**
      * Read the content in the config file
      * and push it into the right container (desktop and/or taskbar)
-     * @param Object $content of configuration file
+     * @param Array $content of configuration file
      */
     public function dispatch($content)
     {
-        foreach ($content as $elem) {
+        foreach ($content as $elem => $contentElem) {
 
-            if (property_exists($elem, 'location')) {
-                foreach ($elem->location as $elemLocation) {
-                    switch ($elemLocation->component) {
+            if (array_key_exists('location', $contentElem)) {
+                foreach ($contentElem['location'] as $keyLoc => $elemLocation) {
+                    switch ($elemLocation['component']) {
                         case "desktop":
-                            array_push($this->desktopContent, $elem);
+                            $this->desktopContent[$elem] = $contentElem;
                             break;
                         case "taskbar":
-                            array_push($this->taskbarContent, $elem);
+                            $this->taskbarContent[$elem] = $contentElem;
                             break;
                     }
                 }
             }
-            $this->dispatch($elem);
+            $this->dispatch($contentElem['content']);
         }
     }
 
