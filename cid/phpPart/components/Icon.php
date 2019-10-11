@@ -54,13 +54,22 @@ class Icon
         global $RELATIVE_PATH;
         $iconLink = '';
 
-        if ($this->type == "directory" || $this->isForm()) {
-            $iconLink = '<a id="' . $this->getId() . '-ico" href="#" >';
-        } else {
-            $iconLink = ($this->isHttpUrl($this->getUrl()) || $this->isAnchorURL($this->getUrl())) ?
-                '<a href="' . $this->getUrl() . '">'
-                : '<a href="' . $RELATIVE_PATH . '/' . $this->getUrl() . '">';
+        switch ($this->type) {
+            case ('directory'):
+                $iconLink = '<a id="' . $this->getId() . '-ico" href="#" >';
+                break;
+            case ('external-link'):
+                $iconLink = '<a href="' . $this->getUrl() . '"  target="_blank">';
+                break;
+            case ('document'):
+                $iconLink = '<a href="' . $RELATIVE_PATH . '/' . $this->getUrl() . '">';
+                //TODO create iFrame to put the document inside
+                break;
+            default:
+                $iconLink = '<a href="' . $this->getUrl() . '>';
+                break;
         }
+
         return $iconLink;
     }
 

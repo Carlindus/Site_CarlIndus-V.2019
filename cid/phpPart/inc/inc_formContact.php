@@ -1,9 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 17489859d6af3de327b7c9b7569be617774e759b
 /**** CONTACT FORM ****/
 
 /* validate the form */
@@ -56,15 +52,6 @@ $contactForm =
         <span>* Tous les champs sont obligatoires</span>
       </label>
 
-<<<<<<< HEAD
-=======
-      <div  class="g-recaptcha" 
-            data-sitekey="' . $RECAPTCHA_KEY . '" 
-            data-callback="enableSubmitBtn" 
-            data-expired-callback="disableSubmitBtn">
-      </div>
-
->>>>>>> 17489859d6af3de327b7c9b7569be617774e759b
       <button class="btnWin31" name="sendForm" id="sendForm" type="submit">Envoyer</button>
       <button name="reset" type="reset">Réinitialiser</button>
     </form>

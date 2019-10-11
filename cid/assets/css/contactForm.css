@@ -1,0 +1,79 @@
+/*******************
+
+*    FORM CONFIG   *
+
+*******************/
+
+#contactForm {
+    max-width: 400px;
+    min-width: 300px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+form label {
+    padding: 2px 5px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    background: inherit;
+    border: none;
+    margin-top: 3px;
+}
+
+form textarea {
+    resize: none;
+}
+
+button[name="send-form"] {
+    min-width: 150px;
+    background: grey;
+    padding: 10px 0;
+    margin: 5px auto;
+}
+
+button[name="send-form"]:hover,
+button[name="send-form"]:active {
+    background: #0000b3;
+    color: #f5f5f5;
+}
+
+button[name="reset"] {
+    font-size: 0.7rem;
+    border: none;
+    background: inherit;
+    margin: 10px;
+}
+
+button[name="reset"]:hover {
+    text-decoration: underline;
+}
+
+.invalidField {
+    color: red;
+}
+
+/* Thanks message when form send */
+
+#confirmSendForm {
+    display: none;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1000;
+}
+
+.thanks * {
+    margin: 10px auto;
+    padding: 2px 15px;
+}

@@ -14,9 +14,21 @@ include(__DIR__ . '/cid/config/config_site.php');
 
   <link rel="icon" type="image/png" href="<?php echo $ASSETS_PATH ?>/img/favicon-CID.png" />
   <link href="<?php echo $ASSETS_PATH ?>/css/main.css" rel="stylesheet" />
-  <link href="<?php echo $ASSETS_PATH ?>/css/responsive.css" rel="stylesheet" />
 
   <style>
+    @media screen and (max-width: 1000px) {
+
+      /* page 404 with spaceInvader*/
+      .space-invaders {
+        display: none;
+      }
+
+      .no-space-invaders {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
     :root {
       --bgColorBtn: #C8C8C8;
       --borderBtnTop: 2px solid #e6e6e6;

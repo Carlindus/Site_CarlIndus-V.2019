@@ -11,3 +11,8 @@
 
   <link rel="icon" type="image/png" href="<?php echo $ASSETS_PATH ?>/img/siteIcons/icon_cid.png" />
   <link href="<?php echo $ASSETS_PATH ?>/css/main.css" rel="stylesheet">
+  <link href="<?php echo $ASSETS_PATH ?>/css/desktop.css" rel="stylesheet">
+  <link href="<?php echo $ASSETS_PATH ?>/css/window.css" rel="stylesheet">
+  <link href="<?php echo $ASSETS_PATH ?>/css/icon.css" rel="stylesheet">
+  <link href="<?php echo $ASSETS_PATH ?>/css/taskbar.css" rel="stylesheet">
+  <link href="<?php echo $ASSETS_PATH ?>/css/contactForm.css" rel="stylesheet">
