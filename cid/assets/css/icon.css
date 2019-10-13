@@ -1,0 +1,78 @@
+/*******************
+*   ICONS CONFIG   *
+*******************/
+.icons h2 {
+    font-family: "Windows", Helvetica, sans-serif !important;
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: normal;
+    line-height: 15px;
+    padding: 5px;
+}
+
+.iconsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icons {
+    width: 100px;
+    height: auto;
+    margin: 1vmin;
+}
+
+.icons img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 0.5vmin;
+}
+
+.ico-txt {
+    display: flex;
+}
+
+.ico-txt img {
+    margin: 0 auto;
+}
+
+.icons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.icons a:hover {
+    cursor: pointer;
+}
+
+.icons a:hover h2 {
+    background: #0000b3;
+    color: #f5f5f5;
+}
+
+/* Icon directory */
+
+.ico {
+    background: #f0e646;
+    width: 50px;
+    height: 35px;
+    border-radius: 5px;
+    border-top: 1px solid grey;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    border-left: 1px solid grey;
+    margin-bottom: 2vmin;
+    margin-top: 10px;
+}
+
+.ico-onglet {
+    background: #f0e646;
+    width: 50%;
+    height: 7px;
+    margin-top: -8px;
+    margin-left: 6px;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid grey;
+    border-bottom: none;
+}

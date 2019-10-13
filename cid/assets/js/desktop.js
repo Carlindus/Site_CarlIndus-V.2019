@@ -81,6 +81,9 @@ function addEventListenerMinimizeWindow(iconId) {
     closeWindow(iconId);
     if (!$('#' + iconId + '-taskbar-item').length) {
       $('#minimize-windows-area').append(createLink(iconId));
+      if (detectmob()) {
+        $('.taskItem').css({ "max-width": "25px" });
+      }
     }
     $('#' + iconId + '-taskbar-item').click(() => {
       $('#' + iconId).toggleClass("window-opened");
