@@ -5,7 +5,6 @@ function initTaskbar() {
         setTime();
     }, 1000 * 60);
     addListenerOnButtons();
-
 };
 
 function setTime() {
