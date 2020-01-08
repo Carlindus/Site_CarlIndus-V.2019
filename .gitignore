@@ -1,2 +1,12 @@
 .htaccess
-cid\downloads\*
+.\cid\downloads\*
+
+cid/downloads/CID_ADD-pub_MemoireDeStage.pdf
+
+cid/downloads/CID_ED_ConstructionDeSite.pdf
+
+cid/downloads/CID_ED_IdentiteVisuelle.pdf
+
+cid/downloads/CID_LAJ_ConstructionDeSite.pdf
+
+cid/downloads/CID_PressBOOK.pdf
