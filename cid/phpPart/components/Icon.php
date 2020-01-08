@@ -31,7 +31,7 @@ class Icon
         if (array_key_exists('isForm', $icon)) $this->isForm = $icon['isForm'];
     }
 
-    /** 
+    /**
      * Create a DOM structure for icon.
      * @return String of HTML
      */
@@ -45,7 +45,7 @@ class Icon
             </div>');
     }
 
-    /** 
+    /**
      * Get the link depending of the URL type.
      * @return String of HTML
      */
@@ -58,13 +58,13 @@ class Icon
             $iconLink = '<a id="' . $this->getId() . '-ico" href="#" >';
         } else {
             $iconLink = ($this->isHttpUrl($this->getUrl()) || $this->isAnchorURL($this->getUrl())) ?
-                '<a href="' . $this->getUrl() . '">'
-                : '<a href="' . $RELATIVE_PATH . '/' . $this->getUrl() . '">';
+                '<a href="' . $this->getUrl() . '" target="_blank">'
+                : '<a href="' . $RELATIVE_PATH . '/' . $this->getUrl() . '" target="_blank">';
         }
         return $iconLink;
     }
 
-    /** 
+    /**
      * Get the link depending of the type.
      * @return String of HTML
      */
@@ -77,20 +77,20 @@ class Icon
             $iconImg =
                 '<div class="ico">
                 <div    class="ico-onglet"
-                        alt="' . $this->getAlt() . '" 
+                        alt="' . $this->getAlt() . '"
                         title="' . $this->getTitle() . '">
                 </div>
             </div>';
         } else {
             $iconImg =
                 '<img   src="' . $ASSETS_PATH . '/img/siteIcons/' . $this->getImg() . '"
-                    alt="' . $this->getAlt() . '" 
+                    alt="' . $this->getAlt() . '"
                     title="' . $this->getTitle() . '"/>';
         }
         return $iconImg;
     }
 
-    /** 
+    /**
      * Test if URL is an external link (http).
      * @param String $urlToCheck
      * @return Boolean
@@ -100,10 +100,10 @@ class Icon
         return (strtoupper(substr($urlToCheck, 0, 4)) === "HTTP") ? true : false;
     }
 
-    /** 
+    /**
      * Test if URL is an internal link (anchor).
      * @param String $urlToCheck
-     * @return Boolean 
+     * @return Boolean
      */
     function isAnchorURL($urlToCheck)
     {

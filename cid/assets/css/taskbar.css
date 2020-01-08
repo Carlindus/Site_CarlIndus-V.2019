@@ -1,0 +1,191 @@
+/********************
+ TASKBAR CONFIG *
+*******************/
+#taskbar {
+    z-index: 10;
+    display: flex;
+    flex: 0 0 auto;
+    max-width: 100vw;
+    height: 2rem;
+    background: lightgray;
+    border-top: 3px solid #e6e6e6;
+    padding: 1px 2px;
+}
+
+#taskbar>div {
+    height: 100%;
+    text-align: center;
+}
+
+/********************
+*     START MENU    *
+*******************/
+
+#startmenu-btn {
+    flex: 0 0 auto;
+}
+
+#startmenu-btn div {
+    display: flex;
+    align-items: center;
+}
+
+#startmenu-btn div img {
+    padding: 0 5px;
+    height: 80%;
+}
+
+#startmenu-btn div span {
+    padding: 0 5px;
+    user-select: none;
+}
+
+#startmenu-btn .inner-border {
+    border-top: 3px solid #e6e6e6;
+    border-left: 3px solid #e6e6e6;
+    border-bottom: 3px solid #848484;
+    border-right: 3px solid #848484;
+}
+
+
+#notification-area .inner-border,
+#startmenu-btn:active .inner-border {
+    border-top: 2px solid #b9b9b9;
+    border-left: 2px solid #b9b9b9;
+    border-bottom: 2px solid #e6e6e6;
+    border-right: 2px solid #e6e6e6;
+}
+
+#startmenu-btn nav {
+    display: none;
+    position: absolute;
+    bottom: 2rem;
+    background: lightgray;
+    padding: 1px;
+    border-top: var(--borderBtnTop);
+    border-left: var(--borderBtnLeft);
+    border-bottom: var(--borderBtnBottom);
+    border-right: var(--borderBtnRight);
+}
+
+#startmenu-btn:hover nav {
+    display: block;
+
+}
+
+/* START MENU NAV */
+
+#taskbar nav h2 {
+    float: left;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-weight: 100;
+    letter-spacing: 1px;
+    padding: 10px 0px 10px 3px;
+    background: grey;
+    color: snow;
+}
+
+#taskbar nav h2 span {
+    font-variant: small-caps slashed-zero;
+    color: lightgrey;
+}
+
+#taskbar nav ul li {
+    height: 25px;
+    width: auto;
+    min-width: 150px;
+}
+
+#taskbar nav ul li p {
+    white-space: nowrap;
+}
+
+#startmenu-btn:hover,
+.taskItem:hover {
+    background-color: #ededed;
+    cursor: pointer;
+}
+
+.menuItem:hover {
+    background-color: #0000b3;
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+
+/********************
+*  MINIMIZE WINDOW  *
+*******************/
+
+#minimize-windows-area {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin: 0 3px;
+}
+
+.taskItem,
+.menuItem {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 2px;
+    padding: 2px 5px;
+    user-select: none;
+}
+
+.taskItem {
+    flex: 0 1 auto;
+    min-width: 20px;
+    width: 100px;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.btn {
+    background-color: var(--bgColorBtn);
+    border-top: var(--borderBtnTop);
+    border-left: var(--borderBtnLeft);
+    border-bottom: var(--borderBtnBottom);
+    border-right: var(--borderBtnRight);
+}
+
+.btn:hover {
+    background-color: var(--bgColorBtnHover);
+}
+
+.btn:active {
+    background-color: var(--bgColorBtnHover);
+    border-top: var(--borderBtnTopHover);
+    border-left: var(--borderBtnLeftHover);
+    border-bottom: var(--borderBtnBottomHover);
+    border-right: var(--borderBtnRightHover);
+
+}
+
+.taskItem:hover,
+.menuitem:hover {
+    cursor: pointer;
+}
+
+
+.taskItem img,
+.menuItem img {
+    height: 60%;
+    margin-right: 5px;
+}
+
+/* NOTIFICATION AREA */
+
+#notification-area {
+    flex: 0 0 auto;
+    display: flex;
+}
+
+#notification-area div span {
+    display: block;
+}

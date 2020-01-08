@@ -50,16 +50,16 @@ include($directory.'/phpPart/inc/inc_head.php');
     .logowin311 img {
     animation: none;
     opacity: 0.2;
-  }
-  @media screen and (max-width: 1000px) {
-
-      #thanksMessage .directory {
-          display: block;
-          top: 30%;
-          left: 0;
-          transform: translate(0,-30%);
-    }
-  }
+  }
+  @media screen and (max-width: 1000px) {
+
+      #thanksMessage .directory {
+          display: block;
+          top: 30%;
+          left: 0;
+          transform: translate(0,-30%);
+    }
+  }
 
   </style>
 </head>

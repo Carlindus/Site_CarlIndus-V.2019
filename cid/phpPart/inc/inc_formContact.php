@@ -1,9 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 17489859d6af3de327b7c9b7569be617774e759b
 /**** CONTACT FORM ****/
 
 /* validate the form */
@@ -15,12 +12,12 @@ $contactForm =
            method="post"
            data-validForm="true" />
 
-      <label  for="name">Veuillez indiquer votre nom : 
-        <input  id="name" 
-                name="name" 
-                value="" 
-                type="text" 
-                data-required="true" 
+      <label  for="name">Veuillez indiquer votre nom :
+        <input  id="name"
+                name="name"
+                value=""
+                type="text"
+                data-required="true"
                 placeholder="Nom" />
       </label>
 
@@ -41,8 +38,8 @@ $contactForm =
                   data-email="true"
                   placeholder="E-mail" />
       </label>
-      
-      <label for="message">Veuillez écrire votre message : 
+
+      <label for="message">Veuillez écrire votre message :
         <textarea   id="message"
                     name="message"
                     rows="4"
@@ -51,20 +48,11 @@ $contactForm =
                     placeholder="Message...">
                     </textarea>
       </label>
-      
+
       <label>
         <span>* Tous les champs sont obligatoires</span>
       </label>
 
-<<<<<<< HEAD
-=======
-      <div  class="g-recaptcha" 
-            data-sitekey="' . $RECAPTCHA_KEY . '" 
-            data-callback="enableSubmitBtn" 
-            data-expired-callback="disableSubmitBtn">
-      </div>
-
->>>>>>> 17489859d6af3de327b7c9b7569be617774e759b
       <button class="btnWin31" name="sendForm" id="sendForm" type="submit">Envoyer</button>
       <button name="reset" type="reset">Réinitialiser</button>
     </form>

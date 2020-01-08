@@ -42,6 +42,16 @@
             "alt": "Dossier site Lille Aux Jeux",
             "title": "Afficher le dossier de construction de site de Lille Aux Jeux",
             "content": {}
+          },
+          "gitHub-laj": {
+            "type": "external-link",
+            "id": "gitHub-laj",
+            "name": "voir le code",
+            "url": "https://github.com/Carlindus/Site_Lille-Aux-Jeux",
+            "img": "icon_code.png",
+            "alt": "Lien vers le GitHub du site Lille Aux Jeux",
+            "title": "Voir le GitHub Lille Aux Jeux",
+            "content": {}
           }
         }
       },
@@ -83,6 +93,16 @@
             "alt": "",
             "title": "",
             "content": {}
+          },
+          "gitHub-ed": {
+            "type": "external-link",
+            "id": "gitHub-ed",
+            "name": "voir le code",
+            "url": "https://github.com/Carlindus/Site_ED-Photographe",
+            "img": "icon_code.png",
+            "alt": "Lien vers le GitHub du site ED-Photographe",
+            "title": "Voir le GitHub",
+            "content": {}
           }
         }
       },
@@ -113,6 +133,16 @@
             "img": "icon_book.png",
             "alt": "Memoire de stage",
             "title": "Afficher le Mémoire de stage",
+            "content": {}
+          },
+          "gitHub-add": {
+            "type": "external-link",
+            "id": "gitHub-add",
+            "name": "voir le code",
+            "url": "https://github.com/Carlindus/Site_Add-Com",
+            "img": "icon_code.png",
+            "alt": "Lien vers le GitHub du site Add-com",
+            "title": "Voir le GitHub",
             "content": {}
           }
         }
@@ -153,7 +183,48 @@
     "img": "icon_myDocuments.png",
     "alt": "Icone mes documents",
     "title": "Accéder à mes documents",
-    "content": {}
+    "content": {
+      "pressbook-cid": {
+      "type": "document",
+      "id": "pressbook-cid",
+      "name": "Press-Book",
+      "url": "/downloads/CID_PressBOOK.pdf",
+      "img": "icon_book.png",
+      "alt": "Lien vers le Press-book de CarlIndus Design",
+      "title": "Ouvrir le Press-book de CarlIndus Design",
+      "content": {}
+    },
+      "memoire-add": {
+      "type": "document",
+      "id": "memoire-addcom",
+      "name": "Rapport de stage",
+      "url": "downloads/CID_ADD-pub_MemoireDeStage.pdf",
+      "img": "icon_book.png",
+      "alt": "Memoire de stage",
+      "title": "Afficher le Mémoire de stage",
+      "content": {}
+    },
+      "conception-laj": {
+        "type": "document",
+        "id": "conception-laj",
+        "name": "Dossier de conception",
+        "url": "downloads/CID_LAJ_ConstructionDeSite.pdf",
+        "img": "icon_document.png",
+        "alt": "Dossier site Lille Aux Jeux",
+        "title": "Afficher le dossier de construction de site de Lille Aux Jeux",
+        "content": {}
+      },
+      "conception-ed": {
+        "type": "document",
+        "id": "conception-ed",
+        "name": "Dossier de conception",
+        "url": "downloads/CID_ED_ConstructionDeSite.pdf",
+        "img": "icon_document.png",
+        "alt": "Dossier Site Etienne Deleplanque",
+        "title": "Afficher le dossier de construction de site d'Etienne Deleplanque",
+        "content": {}
+      }
+    }
   },
   "apropos-cid": {
     "type": "directory",
